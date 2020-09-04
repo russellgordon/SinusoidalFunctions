@@ -9,10 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     
+    let initialA: CGFloat = 1
+    let initialD: Degrees = 0
+    let initialK: CGFloat = 1
+    let initialC: CGFloat = 0
+
+    @State private var a: CGFloat = 1
+    @State private var d: Degrees = 0
+    @State private var k: CGFloat = 1
+    @State private var c: CGFloat = 0
+    @State private var angle: Degrees = 0
+    
     var body: some View {
         
         // Provide dimensions information for the entire device
         GeometryReader { geometry in
+            
+            let padding: CGFloat = 20
             
             VStack {
                 
@@ -22,29 +35,62 @@ struct ContentView: View {
                     // Show the plane, and then the function on top of it
                     ZStack {
                         
-                        let padding: CGFloat = 20
-
                         // The plane
                         CartesianPlane(height: geometry.size.height,
                                        width: geometry.size.width,
                                        padding: padding)
                         
-                        // The function
-                        SinusoidalFunction(a: 1,
-                                           d: 0,
-                                           k: 1,
-                                           c: 0,
+                        // The original function
+                        SinusoidalFunction(a: initialA,
+                                           d: initialD,
+                                           k: initialK,
+                                           c: initialC,
+                                           angle: 720,
+                                           type: .sine)
+                            .stroke(Color.black, style: StrokeStyle(lineWidth: 1.0, dash: [5.0], dashPhase: 5.0))
+                            .padding(.horizontal, padding)
+
+                        // The transformed function
+                        SinusoidalFunction(a: a,
+                                           d: d,
+                                           k: k,
+                                           c: c,
                                            angle: 720,
                                            type: .sine)
                             .stroke(Color.red, lineWidth: 2.0)
                             .padding(.horizontal, padding)
-                        
                     }
                     
                 }
                 
                 // Controls and unit circle will show here eventually
-                Spacer(minLength: geometry.size.height / 2)
+                Group {
+                    Text("Vertical scale, a = " + String(format: "%.1f", a))
+                        .padding(.bottom, -10)
+                    Slider(value: $a, in: -2...2, step: 0.1)
+                        .padding(.vertical, -10)
+                        .padding(.horizontal, padding)
+
+                    Text("Vertical shift, c = : " + String(format: "%.1f", c))
+                        .padding(.bottom, -10)
+                    Slider(value: $c, in: -2...2, step: 0.1)
+                        .padding(.vertical, -10)
+                        .padding(.horizontal, padding)
+
+                    Text("Horizontal scale, k = " + String(format: "%.1f", k))
+                        .padding(.bottom, -10)
+                    Slider(value: $k, in: -2...2, step: 0.1)
+                        .padding(.vertical, -10)
+                        .padding(.horizontal, padding)
+
+                    Text("Horizontal shift, d = " + String(format: "%.1f", d))
+                        .padding(.bottom, -10)
+                    Slider(value: $d, in: 0...720, step: 1.0)
+                        .padding(.vertical, -10)
+                        .padding(.horizontal, padding)
+
+                }
+                .padding(.bottom, padding)
                 
             }
             
