@@ -19,7 +19,15 @@ struct ContentView: View {
                 // Provide dimensions information for the portion of the VStack the plane will occupy
                 GeometryReader { geometry in
                     
-                    CartesianPlane(height: geometry.size.height, width: geometry.size.width)
+                    // Show the plane, and then the graph on top of it (eventually)
+                    ZStack {
+
+                        // The plane
+                        CartesianPlane(height: geometry.size.height, width: geometry.size.width)
+                        
+                        // The graph (not here yet)
+                        
+                    }
                     
                 }
                 
