@@ -10,18 +10,22 @@ import SwiftUI
 struct ContentView: View {
         
     var body: some View {
-        VStack {
+        GeometryReader { geometry in
             
-            GeometryReader { geometry in
-                ZStack {
-                    CartesianPlane()
-                        .stroke(lineWidth: 2)
-                        .padding()
+            VStack {
+                
+                GeometryReader { geometry in
+                    ZStack {
+                        CartesianPlane()
+                            .stroke(Color.black, style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .miter))
+                            .padding()
+                    }
                 }
+                
+                Spacer(minLength: geometry.size.height / 3)
+
             }
-            
-            Spacer(minLength: 300)
-            
+
         }
     }
     
@@ -29,6 +33,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+        ContentView().previewDevice(PreviewDevice(rawValue: "iPhone 11"))
         ContentView()
     }
 }
