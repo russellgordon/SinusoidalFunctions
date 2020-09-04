@@ -63,34 +63,39 @@ struct ContentView: View {
                     
                 }
                 
+                // Equation
+                Image("sine")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxHeight: 55)
+                
                 // Controls and unit circle will show here eventually
-                Group {
-                    Text("Vertical scale, a = " + String(format: "%.1f", a))
-                        .padding(.bottom, -10)
-                    Slider(value: $a, in: -2...2, step: 0.1)
-                        .padding(.vertical, -10)
-                        .padding(.horizontal, padding)
+                HStack {
+                    
+                    VStack {
+                        Text("a = " + String(format: "%.1f", a))
+                        Slider(value: $a, in: -2...2, step: 0.1)
+                            .padding(.horizontal, padding)
 
-                    Text("Vertical shift, c = : " + String(format: "%.1f", c))
-                        .padding(.bottom, -10)
-                    Slider(value: $c, in: -2...2, step: 0.1)
-                        .padding(.vertical, -10)
-                        .padding(.horizontal, padding)
+                        Text("c = " + String(format: "%.1f", c))
+                        Slider(value: $c, in: -2...2, step: 0.1)
+                            .padding(.horizontal, padding)
+                    }
+                    
+                    VStack {
+                        Text("k = " + String(format: "%.1f", k))
+                        Slider(value: $k, in: -2...2, step: 0.1)
+                            .padding(.horizontal, padding)
 
-                    Text("Horizontal scale, k = " + String(format: "%.1f", k))
-                        .padding(.bottom, -10)
-                    Slider(value: $k, in: -2...2, step: 0.1)
-                        .padding(.vertical, -10)
-                        .padding(.horizontal, padding)
+                        Text("d = " + String(format: "%.1f", d))
+                        Slider(value: $d, in: 0...720, step: 1.0)
+                            .padding(.horizontal, padding)
 
-                    Text("Horizontal shift, d = " + String(format: "%.1f", d))
-                        .padding(.bottom, -10)
-                    Slider(value: $d, in: 0...720, step: 1.0)
-                        .padding(.vertical, -10)
-                        .padding(.horizontal, padding)
+                    }
+
 
                 }
-                .padding(.bottom, padding)
+                .padding(.vertical, padding)
                 
             }
             
@@ -101,7 +106,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().previewDevice(PreviewDevice(rawValue: "iPod touch (7th generation)"))
         ContentView().previewDevice(PreviewDevice(rawValue: "iPhone 11"))
         ContentView().previewDevice(PreviewDevice(rawValue: "iPad (7th generation)"))
     }
