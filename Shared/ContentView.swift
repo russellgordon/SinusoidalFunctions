@@ -8,10 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+        
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            
+            GeometryReader { geometry in
+                ZStack {
+                    CartesianPlane()
+                        .stroke(lineWidth: 2)
+                        .padding()
+                }
+            }
+            
+            Spacer(minLength: 300)
+            
+        }
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
