@@ -21,6 +21,8 @@
 		81F98B502502ABE600A114B2 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F98B4E2502ABE600A114B2 /* Labels.swift */; };
 		81F98B522502AC9400A114B2 /* AxisLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F98B512502AC9400A114B2 /* AxisLabel.swift */; };
 		81F98B532502AC9400A114B2 /* AxisLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F98B512502AC9400A114B2 /* AxisLabel.swift */; };
+		81F98B552502AD7E00A114B2 /* CartesianPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F98B542502AD7E00A114B2 /* CartesianPlane.swift */; };
+		81F98B562502AD7E00A114B2 /* CartesianPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F98B542502AD7E00A114B2 /* CartesianPlane.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,7 @@
 		81F98B4425027A6D00A114B2 /* Axes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Axes.swift; sourceTree = "<group>"; };
 		81F98B4E2502ABE600A114B2 /* Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
 		81F98B512502AC9400A114B2 /* AxisLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisLabel.swift; sourceTree = "<group>"; };
+		81F98B542502AD7E00A114B2 /* CartesianPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartesianPlane.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,13 +72,10 @@
 		81F98B1925019C7200A114B2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				81F98B572502AE8600A114B2 /* CartesianPlane */,
 				81F98B1A25019C7200A114B2 /* SinusoidalFunctionsApp.swift */,
 				81F98B1B25019C7200A114B2 /* ContentView.swift */,
 				81F98B1C25019C7300A114B2 /* Assets.xcassets */,
-				81F98B4425027A6D00A114B2 /* Axes.swift */,
-				81F98B4E2502ABE600A114B2 /* Labels.swift */,
-				81F98B512502AC9400A114B2 /* AxisLabel.swift */,
-				81F98B4125027A0B00A114B2 /* CGAffineTransform+transformToTypicalCartesianPlane.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -104,6 +104,18 @@
 				81F98B2C25019C7400A114B2 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		81F98B572502AE8600A114B2 /* CartesianPlane */ = {
+			isa = PBXGroup;
+			children = (
+				81F98B542502AD7E00A114B2 /* CartesianPlane.swift */,
+				81F98B4425027A6D00A114B2 /* Axes.swift */,
+				81F98B4E2502ABE600A114B2 /* Labels.swift */,
+				81F98B512502AC9400A114B2 /* AxisLabel.swift */,
+				81F98B4125027A0B00A114B2 /* CGAffineTransform+transformToTypicalCartesianPlane.swift */,
+			);
+			path = CartesianPlane;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +217,7 @@
 			files = (
 				81F98B4225027A0B00A114B2 /* CGAffineTransform+transformToTypicalCartesianPlane.swift in Sources */,
 				81F98B4F2502ABE600A114B2 /* Labels.swift in Sources */,
+				81F98B552502AD7E00A114B2 /* CartesianPlane.swift in Sources */,
 				81F98B4525027A6D00A114B2 /* Axes.swift in Sources */,
 				81F98B522502AC9400A114B2 /* AxisLabel.swift in Sources */,
 				81F98B2F25019C7400A114B2 /* ContentView.swift in Sources */,
@@ -218,6 +231,7 @@
 			files = (
 				81F98B4325027A0B00A114B2 /* CGAffineTransform+transformToTypicalCartesianPlane.swift in Sources */,
 				81F98B502502ABE600A114B2 /* Labels.swift in Sources */,
+				81F98B562502AD7E00A114B2 /* CartesianPlane.swift in Sources */,
 				81F98B4625027A6D00A114B2 /* Axes.swift in Sources */,
 				81F98B532502AC9400A114B2 /* AxisLabel.swift in Sources */,
 				81F98B3025019C7400A114B2 /* ContentView.swift in Sources */,

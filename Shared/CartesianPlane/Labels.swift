@@ -42,11 +42,3 @@ struct Labels: View {
 
     }
 }
-
-struct Labels_Previews: PreviewProvider {
-    static var previews: some View {
-        GeometryReader { geometry in
-            Labels(planeWidth: geometry.size.width, planeHeight: geometry.size.height)
-        }
-    }
-}
