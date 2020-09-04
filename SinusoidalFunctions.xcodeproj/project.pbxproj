@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81ED87D12502E4C5008A578E /* SinusoidalFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED87D02502E4C5008A578E /* SinusoidalFunction.swift */; };
+		81ED87D22502E4C5008A578E /* SinusoidalFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED87D02502E4C5008A578E /* SinusoidalFunction.swift */; };
 		81F98B2D25019C7400A114B2 /* SinusoidalFunctionsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F98B1A25019C7200A114B2 /* SinusoidalFunctionsApp.swift */; };
 		81F98B2E25019C7400A114B2 /* SinusoidalFunctionsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F98B1A25019C7200A114B2 /* SinusoidalFunctionsApp.swift */; };
 		81F98B2F25019C7400A114B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F98B1B25019C7200A114B2 /* ContentView.swift */; };
@@ -26,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		81ED87D02502E4C5008A578E /* SinusoidalFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinusoidalFunction.swift; sourceTree = "<group>"; };
 		81F98B1A25019C7200A114B2 /* SinusoidalFunctionsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinusoidalFunctionsApp.swift; sourceTree = "<group>"; };
 		81F98B1B25019C7200A114B2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		81F98B1C25019C7300A114B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,6 +78,7 @@
 				81F98B572502AE8600A114B2 /* CartesianPlane */,
 				81F98B1A25019C7200A114B2 /* SinusoidalFunctionsApp.swift */,
 				81F98B1B25019C7200A114B2 /* ContentView.swift */,
+				81ED87D02502E4C5008A578E /* SinusoidalFunction.swift */,
 				81F98B1C25019C7300A114B2 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -219,6 +223,7 @@
 				81F98B4F2502ABE600A114B2 /* Labels.swift in Sources */,
 				81F98B552502AD7E00A114B2 /* CartesianPlane.swift in Sources */,
 				81F98B4525027A6D00A114B2 /* Axes.swift in Sources */,
+				81ED87D12502E4C5008A578E /* SinusoidalFunction.swift in Sources */,
 				81F98B522502AC9400A114B2 /* AxisLabel.swift in Sources */,
 				81F98B2F25019C7400A114B2 /* ContentView.swift in Sources */,
 				81F98B2D25019C7400A114B2 /* SinusoidalFunctionsApp.swift in Sources */,
@@ -233,6 +238,7 @@
 				81F98B502502ABE600A114B2 /* Labels.swift in Sources */,
 				81F98B562502AD7E00A114B2 /* CartesianPlane.swift in Sources */,
 				81F98B4625027A6D00A114B2 /* Axes.swift in Sources */,
+				81ED87D22502E4C5008A578E /* SinusoidalFunction.swift in Sources */,
 				81F98B532502AC9400A114B2 /* AxisLabel.swift in Sources */,
 				81F98B3025019C7400A114B2 /* ContentView.swift in Sources */,
 				81F98B2E25019C7400A114B2 /* SinusoidalFunctionsApp.swift in Sources */,
