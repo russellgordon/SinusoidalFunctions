@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CartesianPlane: Shape {
+struct Axes: Shape {
     
     // Used for positioning scale and text on the plane
     let vU: CGFloat

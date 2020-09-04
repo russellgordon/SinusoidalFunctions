@@ -21,7 +21,7 @@ struct ContentView: View {
                         let planeWidth = geometry.size.width - padding * 2.0
                         
                         // Draw the plane as a shape
-                        CartesianPlane(verticalUnit: geometry.size.height / 64.0,
+                        Axes(verticalUnit: geometry.size.height / 64.0,
                                        horizontalUnit: planeWidth / 8.0)
                             .stroke(Color.black, style: StrokeStyle(lineWidth: 2,
                                                                     lineCap: .round,
