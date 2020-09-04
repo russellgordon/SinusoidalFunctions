@@ -59,3 +59,31 @@ struct Axes: Shape {
     }
 }
 
+
+
+struct Axes_Previews: PreviewProvider {
+        
+    static var previews: some View {
+        
+        VStack {
+            
+            GeometryReader { geometry in
+
+                // Leading and trailing padding for the axes
+                let planeWidth = geometry.size.width - 20.0 * 2.0
+
+                Axes(verticalUnit: geometry.size.height / 64.0,
+                     horizontalUnit: planeWidth / 8.0)
+                    .stroke(Color.black, style: StrokeStyle(lineWidth: 2,
+                                                            lineCap: .round,
+                                                            lineJoin: .miter))
+                    .padding(.horizontal, 20.0)
+
+            }
+            
+            Spacer(minLength: 20.0)
+
+        }
+
+    }
+}
