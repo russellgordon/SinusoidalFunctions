@@ -19,6 +19,7 @@ struct ContentView: View {
     @State private var k: CGFloat = 1
     @State private var c: CGFloat = 0
     @State private var angle: Degrees = 0
+    @State private var functionType: SinusoidalType = .sine
     
     var body: some View {
         
@@ -46,7 +47,7 @@ struct ContentView: View {
                                            k: initialK,
                                            c: initialC,
                                            angle: 720,
-                                           type: .sine)
+                                           type: functionType)
                             .stroke(Color.black, style: StrokeStyle(lineWidth: 1.0, dash: [5.0], dashPhase: 5.0))
                             .padding(.horizontal, padding)
 
@@ -56,7 +57,7 @@ struct ContentView: View {
                                            k: k,
                                            c: c,
                                            angle: 720,
-                                           type: .sine)
+                                           type: functionType)
                             .stroke(Color.red, lineWidth: 2.0)
                             .padding(.horizontal, padding)
                     }
@@ -64,11 +65,26 @@ struct ContentView: View {
                 }
                 
                 // Equation
-                Image("sine")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(maxHeight: 55)
+                if functionType == .sine {
+                    Image("sine")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxHeight: 55)
+                } else {
+                    Image("cosine")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxHeight: 55)
+                }
                 
+                Picker("Function type", selection: $functionType) {
+                    ForEach(SinusoidalType.allCases, id: \.rawValue) { value in
+                        Text("\(value.rawValue)").tag(value)
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding(.horizontal, padding)
+                                
                 // Controls and unit circle will show here eventually
                 HStack {
                     

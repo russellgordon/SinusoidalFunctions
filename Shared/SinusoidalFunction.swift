@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-enum SinusoidalType {
-    case sine
-    case cosine
+enum SinusoidalType: String, CaseIterable {    
+    case sine = "sine"
+    case cosine = "cosine"
 }
 
 typealias Degrees = CGFloat
