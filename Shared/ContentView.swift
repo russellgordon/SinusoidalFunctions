@@ -97,7 +97,7 @@ struct ContentView: View {
                             .padding(.horizontal, padding)
 
                         // The reference triangle for transformed function
-                        ReferenceTriangle(angle: angle * k)
+                        ReferenceTriangle(angle: angle)
                             .stroke(Color.primary,
                                     style: StrokeStyle(lineWidth: 2,
                                                        lineCap: .square,
@@ -114,7 +114,7 @@ struct ContentView: View {
                                 .padding(.horizontal, padding)
 
                             // The opposite side length
-                            OppositeSide(angle: angle * k)
+                            OppositeSide(angle: angle)
                                 .stroke(Color.red,
                                         style: StrokeStyle(lineWidth: 2,
                                                            lineCap: .square))
@@ -130,7 +130,7 @@ struct ContentView: View {
                                 .padding(.horizontal, padding)
 
                             // The opposide side length
-                            AdjacentSide(angle: angle * k)
+                            AdjacentSide(angle: angle)
                                 .stroke(Color.green,
                                         style: StrokeStyle(lineWidth: 2,
                                                            lineCap: .square))
