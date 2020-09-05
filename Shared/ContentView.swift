@@ -89,12 +89,12 @@ struct ContentView: View {
                         Image("sine")
                             .resizable()
                             .scaledToFit()
-                            .frame(maxHeight: 55)
+                            .frame(minHeight: 55, maxHeight: 55)
                     } else {
                         Image("cosine")
                             .resizable()
                             .scaledToFit()
-                            .frame(maxHeight: 55)
+                            .frame(minHeight: 55, maxHeight: 55)
                     }
                     
                     Picker("Function type", selection: $functionType) {
