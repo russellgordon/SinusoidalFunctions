@@ -1,5 +1,5 @@
 //
-//  CartesianPlane.swift
+//  Axes.swift
 //  SinusoidalFunctions
 //
 //  Created by Russell Gordon on 2020-09-04.

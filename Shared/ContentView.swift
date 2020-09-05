@@ -66,6 +66,16 @@ struct ContentView: View {
                                 .fill(functionType == .sine ? red : green)
                                 .blendMode(functionType == .sine ? .hardLight : .darken)
                                 .padding(.horizontal, padding)
+                            
+                        }
+                        
+                        // Show the sinusoidal axis when there is a vertical shift
+                        if c != 0 {
+                            SinusoidalAxis(c: c)
+                                .stroke(functionType == .sine ? red : green, style: StrokeStyle(lineWidth: 1.0, dash: [5.0], dashPhase: 5.0))
+                                .blendMode(functionType == .sine ? .hardLight : .darken)
+                                .padding(.horizontal, 20.0)
+
                         }
                     }
                     
