@@ -28,7 +28,7 @@ struct ContentView: View {
             
             let padding: CGFloat = 20
             
-            VStack(spacing: 10) {
+            VStack(spacing: 15) {
                 
                 // Sinusoidal function
                 GeometryReader { geometry in

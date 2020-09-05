@@ -9,17 +9,12 @@ import SwiftUI
 
 struct Axes: Shape {
     
-    // Used for positioning scale and text on the plane
-    let vU: CGFloat
-    let hU: CGFloat
-    
-    init(verticalUnit: CGFloat, horizontalUnit: CGFloat) {
-        self.vU = verticalUnit
-        self.hU = horizontalUnit
-    }
-    
     func path(in rect: CGRect) -> Path {
         
+        // Used for scale on the plane
+        let vU: CGFloat = rect.height / 64.0
+        let hU: CGFloat = rect.width / 8.0
+
         // One quarter of the height
         let vUQuarter = rect.size.height / 4.0
         
@@ -69,14 +64,11 @@ struct Axes_Previews: PreviewProvider {
             
             GeometryReader { geometry in
 
-                // Leading and trailing padding for the axes
-                let planeWidth = geometry.size.width - 20.0 * 2.0
-
-                Axes(verticalUnit: geometry.size.height / 64.0,
-                     horizontalUnit: planeWidth / 8.0)
-                    .stroke(Color.black, style: StrokeStyle(lineWidth: 2,
-                                                            lineCap: .round,
-                                                            lineJoin: .miter))
+                Axes()
+                    .stroke(Color.black,
+                            style: StrokeStyle(lineWidth: 2,
+                                               lineCap: .round,
+                                               lineJoin: .miter))
                     .padding(.horizontal, 20.0)
 
             }

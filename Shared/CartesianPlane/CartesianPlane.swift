@@ -21,11 +21,11 @@ struct CartesianPlane: View {
         ZStack {
 
             // Draw the plane as a shape
-            Axes(verticalUnit: height / 64.0,
-                 horizontalUnit: planeWidth / 8.0)
-                .stroke(Color.primary, style: StrokeStyle(lineWidth: 2,
-                                                        lineCap: .round,
-                                                        lineJoin: .miter))
+            Axes()
+                .stroke(Color.primary,
+                        style: StrokeStyle(lineWidth: 2,
+                                           lineCap: .round,
+                                           lineJoin: .miter))
                 .padding(.horizontal, padding)
             
             // Labels for the axes
