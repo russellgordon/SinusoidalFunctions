@@ -10,6 +10,7 @@
 		818979022503DF15008BBD1D /* OppositeSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818979012503DF15008BBD1D /* OppositeSide.swift */; };
 		818979042503E5D2008BBD1D /* AdjacentSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818979032503E5D2008BBD1D /* AdjacentSide.swift */; };
 		818979062503ECD3008BBD1D /* SinusoidalAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818979052503ECD3008BBD1D /* SinusoidalAxis.swift */; };
+		818979082503FF12008BBD1D /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 818979072503FF12008BBD1D /* license.txt */; };
 		81C017E32503CC32008EEE04 /* UnitCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C017E22503CC32008EEE04 /* UnitCircle.swift */; };
 		81C017E52503CFBC008EEE04 /* UnitCircleIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C017E42503CFBC008EEE04 /* UnitCircleIllustration.swift */; };
 		81C017E62503CFE4008EEE04 /* UnitCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C017E22503CC32008EEE04 /* UnitCircle.swift */; };
@@ -43,6 +44,7 @@
 		818979012503DF15008BBD1D /* OppositeSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OppositeSide.swift; sourceTree = "<group>"; };
 		818979032503E5D2008BBD1D /* AdjacentSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjacentSide.swift; sourceTree = "<group>"; };
 		818979052503ECD3008BBD1D /* SinusoidalAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinusoidalAxis.swift; sourceTree = "<group>"; };
+		818979072503FF12008BBD1D /* license.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		81C017E22503CC32008EEE04 /* UnitCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitCircle.swift; sourceTree = "<group>"; };
 		81C017E42503CFBC008EEE04 /* UnitCircleIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitCircleIllustration.swift; sourceTree = "<group>"; };
 		81C017E82503D113008EEE04 /* ReferenceTriangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceTriangle.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		81F98B1425019C7200A114B2 = {
 			isa = PBXGroup;
 			children = (
+				818979072503FF12008BBD1D /* license.txt */,
 				81F98B1925019C7200A114B2 /* Shared */,
 				81F98B2325019C7300A114B2 /* iOS */,
 				81F98B2A25019C7300A114B2 /* macOS */,
@@ -236,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				818979082503FF12008BBD1D /* license.txt in Resources */,
 				81F98B3125019C7400A114B2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
