@@ -65,7 +65,7 @@ struct Axes_Previews: PreviewProvider {
         
     static var previews: some View {
         
-        VStack {
+        ZStack {
             
             GeometryReader { geometry in
 
