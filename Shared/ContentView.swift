@@ -70,9 +70,15 @@ struct ContentView: View {
                     // Show the plane, and then the circle on top of it
                     ZStack {
                         
-                        UnitCirclePlane(height: geometry.size.height - 40,
-                                       width: geometry.size.width,
-                                       padding: padding)
+                        // The graph
+                        UnitCircle()
+                            .stroke(Color.gray, lineWidth: 2.0)
+                            .padding(.horizontal, padding)
+                        
+                        // The plane
+                        UnitCirclePlane(height: geometry.size.height,
+                                        width: geometry.size.width,
+                                        padding: padding)
 
                         
                     }

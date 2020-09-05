@@ -21,11 +21,11 @@ struct UnitCirclePlane: View {
         ZStack {
 
             // Draw the plane as a shape
-            UnitCircleAxes(verticalUnit: height / 64.0,
-                 horizontalUnit: planeWidth / 8.0)
-                .stroke(Color.primary, style: StrokeStyle(lineWidth: 2,
-                                                        lineCap: .round,
-                                                        lineJoin: .miter))
+            UnitCircleAxes()
+                .stroke(Color.primary,
+                        style: StrokeStyle(lineWidth: 2,
+                                           lineCap: .round,
+                                           lineJoin: .miter))
                 .padding(.horizontal, padding)
 
             // Labels for the axes

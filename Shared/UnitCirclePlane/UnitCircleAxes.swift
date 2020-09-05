@@ -8,17 +8,11 @@
 import SwiftUI
 
 struct UnitCircleAxes: Shape {
-    
-    // Used for positioning scale and text on the plane
-    let vU: CGFloat
-    let hU: CGFloat
-    
-    init(verticalUnit: CGFloat, horizontalUnit: CGFloat) {
-        self.vU = verticalUnit
-        self.hU = horizontalUnit
-    }
-    
+        
     func path(in rect: CGRect) -> Path {
+        
+        // Used for scale on the plane
+        let vU = rect.height / 64.0
         
         // One quarter of the vertical space
         let qL = rect.maxY / 4
@@ -72,11 +66,11 @@ struct UnitCircleAxes_Previews: PreviewProvider {
                 // Leading and trailing padding for the axes
                 let planeWidth = geometry.size.width - 20.0 * 2.0
                 
-                UnitCircleAxes(verticalUnit: geometry.size.height / 64.0,
-                               horizontalUnit: planeWidth / 8.0)
-                    .stroke(Color.black, style: StrokeStyle(lineWidth: 2,
-                                                            lineCap: .round,
-                                                            lineJoin: .miter))
+                UnitCircleAxes()
+                    .stroke(Color.black,
+                            style: StrokeStyle(lineWidth: 2,
+                                               lineCap: .round,
+                                               lineJoin: .miter))
                     .frame(width: planeWidth, height: planeWidth)
                     .padding(.horizontal, 20.0)
                 
