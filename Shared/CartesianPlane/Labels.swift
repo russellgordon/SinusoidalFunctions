@@ -15,7 +15,7 @@ struct Labels: View {
     var body: some View {
         VStack {
             
-            Spacer(minLength: planeHeight / 3 + planeHeight / 10.0)
+            Spacer(minLength: planeHeight / 3 + planeHeight / 4.0)
             
             let labelWidth: CGFloat = 25.0
             let labelPadding: CGFloat = 5.0
@@ -29,7 +29,7 @@ struct Labels: View {
                 
             }
             
-            Spacer(minLength: 32)
+            Spacer(minLength: 25)
 
             // Label the plane's horizontal axis
             HStack(spacing: (planeWidth - 8.0 * (labelWidth + labelPadding)) / 8.0 ) {
@@ -48,7 +48,7 @@ struct Labels: View {
             .padding(.leading, planeWidth / 8.0)
             .padding(.bottom, 10.0)
 
-            Spacer(minLength: planeHeight / 3 + planeHeight / 10.0)
+            Spacer(minLength: planeHeight / 3 + planeHeight / 5.0)
         }
 
     }
@@ -57,84 +57,90 @@ struct Labels: View {
 struct Labels_Previews: PreviewProvider {
     static var previews: some View {
         
-        VStack {
-            
-            GeometryReader { geometry in
+        GeometryReader { geometry in
+            VStack {
+                
+                GeometryReader { geometry in
 
-                // Leading and trailing padding for the axes
-                let planeWidth = geometry.size.width - 20.0 * 2.0
+                    // Leading and trailing padding for the axes
+                    let planeWidth = geometry.size.width - 20.0 * 2.0
 
-                ZStack {
-                    Axes()
-                        .stroke(Color.black,
-                                style: StrokeStyle(lineWidth: 2,
-                                                   lineCap: .round,
-                                                   lineJoin: .miter))
-                        .padding(.horizontal, 20.0)
-                    
-                    // Labels for the axes
-                    Labels(planeWidth: planeWidth, planeHeight: geometry.size.height)
+                    ZStack {
+                        Axes()
+                            .stroke(Color.black,
+                                    style: StrokeStyle(lineWidth: 2,
+                                                       lineCap: .round,
+                                                       lineJoin: .miter))
+                            .padding(.horizontal, 20.0)
+                        
+                        // Labels for the axes
+                        Labels(planeWidth: planeWidth, planeHeight: geometry.size.height)
+                    }
+
                 }
+                
+                Spacer(minLength: geometry.size.height / 3 * 2)
 
             }
             
-            Spacer(minLength: 20.0)
-
         }
         .previewDevice(PreviewDevice(rawValue: "iPod touch (7th generation)"))
 
-        VStack {
-            
-            GeometryReader { geometry in
+        GeometryReader { geometry in
+            VStack {
+                
+                GeometryReader { geometry in
 
-                // Leading and trailing padding for the axes
-                let planeWidth = geometry.size.width - 20.0 * 2.0
+                    // Leading and trailing padding for the axes
+                    let planeWidth = geometry.size.width - 20.0 * 2.0
 
-                ZStack {
-                    Axes()
-                        .stroke(Color.black,
-                                style: StrokeStyle(lineWidth: 2,
-                                                   lineCap: .round,
-                                                   lineJoin: .miter))
-                        .padding(.horizontal, 20.0)
-                    
-                    // Labels for the axes
-                    Labels(planeWidth: planeWidth, planeHeight: geometry.size.height)
+                    ZStack {
+                        Axes()
+                            .stroke(Color.black,
+                                    style: StrokeStyle(lineWidth: 2,
+                                                       lineCap: .round,
+                                                       lineJoin: .miter))
+                            .padding(.horizontal, 20.0)
+                        
+                        // Labels for the axes
+                        Labels(planeWidth: planeWidth, planeHeight: geometry.size.height)
+                    }
+
                 }
+                
+                Spacer(minLength: geometry.size.height / 3 * 2)
 
             }
-            
-            Spacer(minLength: 20.0)
-
         }
         .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
 
-        VStack {
-            
-            GeometryReader { geometry in
+        GeometryReader { geometry in
+            VStack {
+                
+                GeometryReader { geometry in
 
-                // Leading and trailing padding for the axes
-                let planeWidth = geometry.size.width - 20.0 * 2.0
+                    // Leading and trailing padding for the axes
+                    let planeWidth = geometry.size.width - 20.0 * 2.0
 
-                ZStack {
-                    Axes()
-                        .stroke(Color.black,
-                                style: StrokeStyle(lineWidth: 2,
-                                                   lineCap: .round,
-                                                   lineJoin: .miter))
-                        .padding(.horizontal, 20.0)
-                    
-                    // Labels for the axes
-                    Labels(planeWidth: planeWidth, planeHeight: geometry.size.height)
+                    ZStack {
+                        Axes()
+                            .stroke(Color.black,
+                                    style: StrokeStyle(lineWidth: 2,
+                                                       lineCap: .round,
+                                                       lineJoin: .miter))
+                            .padding(.horizontal, 20.0)
+                        
+                        // Labels for the axes
+                        Labels(planeWidth: planeWidth, planeHeight: geometry.size.height)
+                    }
+
                 }
+                
+                Spacer(minLength: geometry.size.height / 3 * 2)
 
             }
-            
-            Spacer(minLength: 20.0)
-
         }
         .previewDevice(PreviewDevice(rawValue: "iPad (7th generation)"))
-
         
     }
     
