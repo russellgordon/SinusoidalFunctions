@@ -52,7 +52,7 @@ struct UnitCircleIllustration: View {
                         } else {
                             
                             // The adjacent side length
-                            AdjacentSide(angle: 45)
+                            AdjacentSide(angle: 45, c: 0)
                                 .stroke(Color.green,
                                         style: StrokeStyle(lineWidth: 2,
                                                            lineCap: .square))

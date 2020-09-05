@@ -137,14 +137,14 @@ struct ContentView: View {
                         } else {
                             
                             // The adjacent side length
-                            AdjacentSide(angle: angle)
+                            AdjacentSide(angle: angle, c: 0)
                                 .stroke(Color.gray,
                                         style: StrokeStyle(lineWidth: 2,
                                                            lineCap: .square))
                                 .padding(.horizontal, padding)
 
-                            // The adjacent side length
-                            AdjacentSide(angle: angle)
+                            // The adjacent side length for the transformed function
+                            AdjacentSide(angle: angle, c: c)
                                 .stroke(Color.green,
                                         style: StrokeStyle(lineWidth: 2,
                                                            lineCap: .square))

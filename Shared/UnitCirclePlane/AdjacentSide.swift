@@ -10,6 +10,7 @@ import SwiftUI
 struct AdjacentSide: Shape {
     
     var angle: Degrees
+    var c: CGFloat
         
     func path(in rect: CGRect) -> Path {
         
@@ -20,10 +21,10 @@ struct AdjacentSide: Shape {
         var path = Path()
         
         // Start at origin
-        path.move(to: CGPoint(x: 0, y: 0))
+        path.move(to: CGPoint(x: 0, y: c * qL))
 
         // End at point on horizontal axis
-        path.addLine(to: CGPoint(x: cos(angle.inRadians()) * qL, y: 0))
+        path.addLine(to: CGPoint(x: cos(angle.inRadians()) * qL, y: c * qL))
         
         // Return the entire path of the function
         return path
@@ -62,7 +63,7 @@ struct AdjacentSide_Previews: PreviewProvider {
                             .padding(.horizontal, padding)
                         
                         // The opposide side length
-                        AdjacentSide(angle: 45)
+                        AdjacentSide(angle: 45, c: 0)
                             .stroke(Color.green,
                                     style: StrokeStyle(lineWidth: 2,
                                                        lineCap: .square))
