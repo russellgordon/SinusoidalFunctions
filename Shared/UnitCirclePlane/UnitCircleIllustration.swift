@@ -27,12 +27,12 @@ struct UnitCircleIllustration: View {
                                         padding: padding)
 
                         // The circle
-                        UnitCircle(c: 0)
+                        UnitCircle(a: 1, c: 0)
                             .stroke(Color.primary, lineWidth: 2.0)
                             .padding(.horizontal, padding)
                         
                         // The reference triangle
-                        ReferenceTriangle(angle: angle, c: 0)
+                        ReferenceTriangle(angle: angle, a: 1, c: 0)
                             .stroke(Color.primary,
                                     style: StrokeStyle(lineWidth: 2,
                                                        lineCap: .square,
@@ -43,7 +43,7 @@ struct UnitCircleIllustration: View {
                         if type == .sine {
                             
                             // The opposide side length
-                            OppositeSide(angle: 45, c: 0)
+                            OppositeSide(angle: 45, a: 1, c: 0)
                                 .stroke(Color.red,
                                         style: StrokeStyle(lineWidth: 2,
                                                            lineCap: .square))
@@ -52,7 +52,7 @@ struct UnitCircleIllustration: View {
                         } else {
                             
                             // The adjacent side length
-                            AdjacentSide(angle: 45, c: 0)
+                            AdjacentSide(angle: 45, a: 1, c: 0)
                                 .stroke(Color.green,
                                         style: StrokeStyle(lineWidth: 2,
                                                            lineCap: .square))

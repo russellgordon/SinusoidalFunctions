@@ -10,6 +10,7 @@ import SwiftUI
 struct OppositeSide: Shape {
     
     var angle: Degrees
+    var a: CGFloat
     var c: CGFloat
         
     func path(in rect: CGRect) -> Path {
@@ -21,10 +22,10 @@ struct OppositeSide: Shape {
         var path = Path()
         
         // Start with point on unit circle
-        path.move(to: CGPoint(x: cos(angle.inRadians()) * qL, y: sin(angle.inRadians()) * qL + c * qL))
+        path.move(to: CGPoint(x: a * cos(angle.inRadians()) * qL, y: a * sin(angle.inRadians()) * qL + c * qL))
 
         // End at point on horizontal axis
-        path.addLine(to: CGPoint(x: cos(angle.inRadians()) * qL, y: 0 + c * qL))
+        path.addLine(to: CGPoint(x: a * cos(angle.inRadians()) * qL, y: 0 + c * qL))
         
         // Return the entire path of the function
         return path
@@ -50,12 +51,12 @@ struct OppositeSide_Previews: PreviewProvider {
                                         padding: padding)
                         
                         // The graph
-                        UnitCircle(c: 0)
+                        UnitCircle(a: 1, c: 0)
                             .stroke(Color.primary, lineWidth: 2.0)
                             .padding(.horizontal, padding)
                         
                         // The reference triangle
-                        ReferenceTriangle(angle: 45, c: 0)
+                        ReferenceTriangle(angle: 45, a: 1, c: 0)
                             .stroke(Color.primary,
                                     style: StrokeStyle(lineWidth: 2,
                                                        lineCap: .square,
@@ -63,7 +64,7 @@ struct OppositeSide_Previews: PreviewProvider {
                             .padding(.horizontal, padding)
                         
                         // The opposide side length
-                        OppositeSide(angle: 45, c: 0)
+                        OppositeSide(angle: 45, a: 1, c: 0)
                             .stroke(Color.red,
                                     style: StrokeStyle(lineWidth: 2,
                                                        lineCap: .square))

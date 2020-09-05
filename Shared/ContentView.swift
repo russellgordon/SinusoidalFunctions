@@ -93,17 +93,17 @@ struct ContentView: View {
                                         padding: padding)
 
                         // The unit circle for the original function
-                        UnitCircle(c: 0)
+                        UnitCircle(a: 1, c: 0)
                             .stroke(Color.primary, lineWidth: 1.0)
                             .padding(.horizontal, padding)
 
                         // The unit circle for the transformed function
-                        UnitCircle(c: c)
+                        UnitCircle(a: a, c: c)
                             .stroke(Color.primary, lineWidth: 2.0)
                             .padding(.horizontal, padding)
 
                         // The reference triangle for original function
-                        ReferenceTriangle(angle: angle, c: 0)
+                        ReferenceTriangle(angle: angle, a: initialA, c: initialC)
                             .stroke(Color.primary,
                                     style: StrokeStyle(lineWidth: 1,
                                                        lineCap: .square,
@@ -111,7 +111,7 @@ struct ContentView: View {
                             .padding(.horizontal, padding)
 
                         // The reference triangle for transformed function
-                        ReferenceTriangle(angle: angle, c: c)
+                        ReferenceTriangle(angle: angle, a: a, c: c)
                             .stroke(Color.primary,
                                     style: StrokeStyle(lineWidth: 2,
                                                        lineCap: .square,
@@ -121,14 +121,14 @@ struct ContentView: View {
                         if functionType == .sine {
                             
                             // The opposite side length
-                            OppositeSide(angle: angle, c: 0)
+                            OppositeSide(angle: angle, a: initialA, c: initialC)
                                 .stroke(Color.gray,
                                         style: StrokeStyle(lineWidth: 2,
                                                            lineCap: .square))
                                 .padding(.horizontal, padding)
 
                             // The opposite side length for transformed function
-                            OppositeSide(angle: angle, c: c)
+                            OppositeSide(angle: angle, a: a, c: c)
                                 .stroke(Color.red,
                                         style: StrokeStyle(lineWidth: 2,
                                                            lineCap: .square))
@@ -137,14 +137,14 @@ struct ContentView: View {
                         } else {
                             
                             // The adjacent side length
-                            AdjacentSide(angle: angle, c: 0)
+                            AdjacentSide(angle: angle, a: initialA, c: initialC)
                                 .stroke(Color.gray,
                                         style: StrokeStyle(lineWidth: 2,
                                                            lineCap: .square))
                                 .padding(.horizontal, padding)
 
                             // The adjacent side length for the transformed function
-                            AdjacentSide(angle: angle, c: c)
+                            AdjacentSide(angle: angle, a: a, c: c)
                                 .stroke(Color.green,
                                         style: StrokeStyle(lineWidth: 2,
                                                            lineCap: .square))
