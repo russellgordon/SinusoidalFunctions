@@ -77,11 +77,17 @@ struct ContentView: View {
                             .stroke(Color.gray, lineWidth: 2.0)
                             .padding(.horizontal, padding)
                         
-                        // The reference triangle
+                        // The reference triangle for original function
                         ReferenceTriangle(angle: angle)
                             .fill(Color.gray)
                             .padding(.horizontal, padding)
-                        
+
+                        // The reference triangle for transformed function
+                        ReferenceTriangle(angle: angle * k)
+                            .fill(Color.red)
+                            .blendMode(.hardLight)
+                            .padding(.horizontal, padding)
+
                         // The plane
                         UnitCirclePlane(height: geometry.size.height,
                                         width: geometry.size.width,
