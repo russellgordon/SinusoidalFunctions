@@ -22,8 +22,8 @@ struct ContentView: View {
     @State private var functionType: SinusoidalType = .sine
     
     let grey = Color(hue: 240.0/360.0, saturation: 0.15, brightness: 0.45, opacity: 0.75)
-    let green = Color(hue: 135.0/360.0, saturation: 0.72, brightness: 0.73, opacity: 1.0)
-    let red = Color(hue: 3/360.0, saturation: 0.81, brightness: 1.00, opacity: 1.0)
+    let green = Color(hue: 135.0/360.0, saturation: 0.72, brightness: 0.73, opacity: 0.75)
+    let red = Color(hue: 3/360.0, saturation: 0.81, brightness: 1.00, opacity: 0.75)
 
     var body: some View {
         
@@ -64,7 +64,6 @@ struct ContentView: View {
                                                angle: angle * k,
                                                type: functionType)
                                 .fill(functionType == .sine ? red : green)
-                                .blendMode(functionType == .sine ? .hardLight : .darken)
                                 .padding(.horizontal, padding)
                             
                         }
@@ -73,7 +72,6 @@ struct ContentView: View {
                         if c != 0 {
                             SinusoidalAxis(c: c)
                                 .stroke(functionType == .sine ? red : green, style: StrokeStyle(lineWidth: 1.0, dash: [5.0], dashPhase: 5.0))
-                                .blendMode(functionType == .sine ? .hardLight : .darken)
                                 .padding(.horizontal, 20.0)
 
                         }
