@@ -87,27 +87,31 @@ struct ContentView: View {
                     // Show the plane, and then the circle on top of it
                     ZStack {
                         
-                        
                         // The plane
                         UnitCirclePlane(height: geometry.size.height,
                                         width: geometry.size.width,
                                         padding: padding)
 
-                        // The unit circle
-                        UnitCircle()
+                        // The unit circle for the original function
+                        UnitCircle(c: 0)
+                            .stroke(Color.primary, lineWidth: 1.0)
+                            .padding(.horizontal, padding)
+
+                        // The unit circle for the transformed function
+                        UnitCircle(c: c)
                             .stroke(Color.primary, lineWidth: 2.0)
                             .padding(.horizontal, padding)
-                        
+
                         // The reference triangle for original function
-                        ReferenceTriangle(angle: angle)
+                        ReferenceTriangle(angle: angle, c: 0)
                             .stroke(Color.primary,
-                                    style: StrokeStyle(lineWidth: 2,
+                                    style: StrokeStyle(lineWidth: 1,
                                                        lineCap: .square,
                                                        lineJoin: .round))
                             .padding(.horizontal, padding)
 
                         // The reference triangle for transformed function
-                        ReferenceTriangle(angle: angle)
+                        ReferenceTriangle(angle: angle, c: c)
                             .stroke(Color.primary,
                                     style: StrokeStyle(lineWidth: 2,
                                                        lineCap: .square,
@@ -117,14 +121,14 @@ struct ContentView: View {
                         if functionType == .sine {
                             
                             // The opposite side length
-                            OppositeSide(angle: angle)
+                            OppositeSide(angle: angle, c: 0)
                                 .stroke(Color.gray,
                                         style: StrokeStyle(lineWidth: 2,
                                                            lineCap: .square))
                                 .padding(.horizontal, padding)
 
-                            // The opposite side length
-                            OppositeSide(angle: angle)
+                            // The opposite side length for transformed function
+                            OppositeSide(angle: angle, c: c)
                                 .stroke(Color.red,
                                         style: StrokeStyle(lineWidth: 2,
                                                            lineCap: .square))
@@ -132,14 +136,14 @@ struct ContentView: View {
 
                         } else {
                             
-                            // The opposide side length
+                            // The adjacent side length
                             AdjacentSide(angle: angle)
                                 .stroke(Color.gray,
                                         style: StrokeStyle(lineWidth: 2,
                                                            lineCap: .square))
                                 .padding(.horizontal, padding)
 
-                            // The opposide side length
+                            // The adjacent side length
                             AdjacentSide(angle: angle)
                                 .stroke(Color.green,
                                         style: StrokeStyle(lineWidth: 2,

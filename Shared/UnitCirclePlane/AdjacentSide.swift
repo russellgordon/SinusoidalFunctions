@@ -49,12 +49,12 @@ struct AdjacentSide_Previews: PreviewProvider {
                                         padding: padding)
                         
                         // The graph
-                        UnitCircle()
+                        UnitCircle(c: 0)
                             .stroke(Color.primary, lineWidth: 2.0)
                             .padding(.horizontal, padding)
                         
                         // The reference triangle
-                        ReferenceTriangle(angle: 45)
+                        ReferenceTriangle(angle: 45, c: 0)
                             .stroke(Color.primary,
                                     style: StrokeStyle(lineWidth: 2,
                                                        lineCap: .square,
