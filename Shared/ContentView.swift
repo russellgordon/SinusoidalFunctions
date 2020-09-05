@@ -49,6 +49,7 @@ struct ContentView: View {
                                            angle: angle,
                                            type: functionType)
 //                            .stroke(Color.gray, style: StrokeStyle(lineWidth: 1.0, dash: [5.0], dashPhase: 5.0))
+//                            .fill(Color(hue: 240.0/360.0, saturation: 0.3, brightness: 0.58, opacity: 0.5))
                             .fill(Color.gray)
                             .padding(.horizontal, padding)
 
@@ -75,28 +76,48 @@ struct ContentView: View {
                     // Show the plane, and then the circle on top of it
                     ZStack {
                         
-                        // The graph
-                        UnitCircle()
-                            .stroke(Color.gray, lineWidth: 2.0)
-                            .padding(.horizontal, padding)
                         
-                        // The reference triangle for original function
-                        ReferenceTriangle(angle: angle)
-                            .fill(Color.gray)
-                            .padding(.horizontal, padding)
-
-                        // The reference triangle for transformed function
-                        ReferenceTriangle(angle: angle * k)
-                            .fill(Color.red)
-                            .blendMode(.hardLight)
-                            .padding(.horizontal, padding)
-
                         // The plane
                         UnitCirclePlane(height: geometry.size.height,
                                         width: geometry.size.width,
                                         padding: padding)
 
+                        // The unit circle
+                        UnitCircle()
+                            .stroke(Color.primary, lineWidth: 2.0)
+                            .padding(.horizontal, padding)
                         
+                        // The reference triangle for original function
+                        ReferenceTriangle(angle: angle)
+                            .stroke(Color.primary,
+                                    style: StrokeStyle(lineWidth: 2,
+                                                       lineCap: .square,
+                                                       lineJoin: .round))
+                            .padding(.horizontal, padding)
+
+                        // The reference triangle for transformed function
+                        ReferenceTriangle(angle: angle * k)
+                            .stroke(Color.primary,
+                                    style: StrokeStyle(lineWidth: 2,
+                                                       lineCap: .square,
+                                                       lineJoin: .round))
+                            .blendMode(.hardLight)
+                            .padding(.horizontal, padding)
+
+                        // The opposide side length
+                        OppositeSide(angle: angle)
+                            .stroke(Color.gray,
+                                    style: StrokeStyle(lineWidth: 2,
+                                                       lineCap: .square))
+                            .padding(.horizontal, padding)
+
+                        // The opposide side length
+                        OppositeSide(angle: angle * k)
+                            .stroke(Color.red,
+                                    style: StrokeStyle(lineWidth: 2,
+                                                       lineCap: .square))
+                            .padding(.horizontal, padding)
+
                     }
                     
                 }

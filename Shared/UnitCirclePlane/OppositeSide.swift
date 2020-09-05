@@ -1,5 +1,5 @@
 //
-//  UnitCircleIllustration.swift
+//  OppositeSide.swift
 //  SinusoidalFunctions (iOS)
 //
 //  Created by Russell Gordon on 2020-09-05.
@@ -7,11 +7,34 @@
 
 import SwiftUI
 
-struct UnitCircleIllustration: View {
+struct OppositeSide: Shape {
     
     var angle: Degrees
+        
+    func path(in rect: CGRect) -> Path {
+        
+        // One quarter of the vertical space
+        let qL = rect.maxY / 4
+        
+        // Create an empty path
+        var path = Path()
+        
+        // Start with point on unit circle
+        path.move(to: CGPoint(x: cos(angle.inRadians()) * qL, y: sin(angle.inRadians()) * qL))
+
+        // End at point on horizontal axis
+        path.addLine(to: CGPoint(x: cos(angle.inRadians()) * qL, y: 0))
+        
+        // Return the entire path of the function
+        return path
+            .applying(.transformToUnitCirclePlane(rect: rect))
+    }
     
-    var body: some View {
+
+}
+
+struct OppositeSide_Previews: PreviewProvider {
+    static var previews: some View {
         GeometryReader { geometry in
             VStack {
                 
@@ -24,14 +47,14 @@ struct UnitCircleIllustration: View {
                         UnitCirclePlane(height: geometry.size.height,
                                         width: geometry.size.width,
                                         padding: padding)
-
-                        // The circle
+                        
+                        // The graph
                         UnitCircle()
                             .stroke(Color.primary, lineWidth: 2.0)
                             .padding(.horizontal, padding)
                         
                         // The reference triangle
-                        ReferenceTriangle(angle: angle)
+                        ReferenceTriangle(angle: 45)
                             .stroke(Color.primary,
                                     style: StrokeStyle(lineWidth: 2,
                                                        lineCap: .square,
@@ -44,7 +67,7 @@ struct UnitCircleIllustration: View {
                                     style: StrokeStyle(lineWidth: 2,
                                                        lineCap: .square))
                             .padding(.horizontal, padding)
-                                                
+
                     }
                 }
                 
@@ -52,12 +75,8 @@ struct UnitCircleIllustration: View {
 
             }
         }
-
     }
 }
 
-struct UnitCircleIllustration_Previews: PreviewProvider {
-    static var previews: some View {
-        UnitCircleIllustration(angle: 45)
-    }
-}
+
+

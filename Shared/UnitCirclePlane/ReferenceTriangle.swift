@@ -49,21 +49,24 @@ struct ReferenceTriangle_Previews: PreviewProvider {
                         
                         let padding: CGFloat = 20
 
-                        // The graph
-                        UnitCircle()
-                            .stroke(Color.gray, lineWidth: 2.0)
-                            .padding(.horizontal, padding)
-                        
-                        // The reference triangle
-                        ReferenceTriangle(angle: 45)
-                            .fill(Color.gray)
-                            .padding(.horizontal, padding)
-
                         // The plane
                         UnitCirclePlane(height: geometry.size.height,
                                         width: geometry.size.width,
                                         padding: padding)
                         
+                        // The graph
+                        UnitCircle()
+                            .stroke(Color.primary, lineWidth: 2.0)
+                            .padding(.horizontal, padding)
+                        
+                        // The reference triangle
+                        ReferenceTriangle(angle: 45)
+                            .stroke(Color.primary,
+                                    style: StrokeStyle(lineWidth: 2,
+                                                       lineCap: .square,
+                                                       lineJoin: .round))
+                            .padding(.horizontal, padding)
+
                     }
                 }
                 
