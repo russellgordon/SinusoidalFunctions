@@ -52,14 +52,16 @@ struct ContentView: View {
                             .padding(.horizontal, padding)
 
                         // The transformed function
-                        SinusoidalFunction(a: a,
-                                           d: d,
-                                           k: k,
-                                           c: c,
-                                           angle: angle * k,
-                                           type: functionType)
-                            .stroke(Color.red, lineWidth: 2.0)
-                            .padding(.horizontal, padding)
+                        if k != 0 {
+                            SinusoidalFunction(a: a,
+                                               d: d,
+                                               k: k,
+                                               c: c,
+                                               angle: angle * k,
+                                               type: functionType)
+                                .stroke(Color.red, lineWidth: 2.0)
+                                .padding(.horizontal, padding)
+                        }
                     }
                     
                 }
