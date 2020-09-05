@@ -102,19 +102,40 @@ struct ContentView: View {
                             .blendMode(.hardLight)
                             .padding(.horizontal, padding)
 
-                        // The opposide side length
-                        OppositeSide(angle: angle)
-                            .stroke(Color.gray,
-                                    style: StrokeStyle(lineWidth: 2,
-                                                       lineCap: .square))
-                            .padding(.horizontal, padding)
+                        if functionType == .sine {
+                            
+                            // The opposite side length
+                            OppositeSide(angle: angle)
+                                .stroke(Color.gray,
+                                        style: StrokeStyle(lineWidth: 2,
+                                                           lineCap: .square))
+                                .padding(.horizontal, padding)
 
-                        // The opposide side length
-                        OppositeSide(angle: angle * k)
-                            .stroke(Color.red,
-                                    style: StrokeStyle(lineWidth: 2,
-                                                       lineCap: .square))
-                            .padding(.horizontal, padding)
+                            // The opposite side length
+                            OppositeSide(angle: angle * k)
+                                .stroke(Color.red,
+                                        style: StrokeStyle(lineWidth: 2,
+                                                           lineCap: .square))
+                                .padding(.horizontal, padding)
+
+                        } else {
+                            
+                            // The opposide side length
+                            AdjacentSide(angle: angle)
+                                .stroke(Color.gray,
+                                        style: StrokeStyle(lineWidth: 2,
+                                                           lineCap: .square))
+                                .padding(.horizontal, padding)
+
+                            // The opposide side length
+                            AdjacentSide(angle: angle * k)
+                                .stroke(Color.green,
+                                        style: StrokeStyle(lineWidth: 2,
+                                                           lineCap: .square))
+                                .padding(.horizontal, padding)
+
+                        }
+                        
 
                     }
                     

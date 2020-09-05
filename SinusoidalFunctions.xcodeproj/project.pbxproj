@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		818979022503DF15008BBD1D /* OppositeSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818979012503DF15008BBD1D /* OppositeSide.swift */; };
+		818979042503E5D2008BBD1D /* AdjacentSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818979032503E5D2008BBD1D /* AdjacentSide.swift */; };
 		81C017E32503CC32008EEE04 /* UnitCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C017E22503CC32008EEE04 /* UnitCircle.swift */; };
 		81C017E52503CFBC008EEE04 /* UnitCircleIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C017E42503CFBC008EEE04 /* UnitCircleIllustration.swift */; };
 		81C017E62503CFE4008EEE04 /* UnitCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C017E22503CC32008EEE04 /* UnitCircle.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		818979012503DF15008BBD1D /* OppositeSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OppositeSide.swift; sourceTree = "<group>"; };
+		818979032503E5D2008BBD1D /* AdjacentSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjacentSide.swift; sourceTree = "<group>"; };
 		81C017E22503CC32008EEE04 /* UnitCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitCircle.swift; sourceTree = "<group>"; };
 		81C017E42503CFBC008EEE04 /* UnitCircleIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitCircleIllustration.swift; sourceTree = "<group>"; };
 		81C017E82503D113008EEE04 /* ReferenceTriangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceTriangle.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				81C017E42503CFBC008EEE04 /* UnitCircleIllustration.swift */,
 				81C017E82503D113008EEE04 /* ReferenceTriangle.swift */,
 				818979012503DF15008BBD1D /* OppositeSide.swift */,
+				818979032503E5D2008BBD1D /* AdjacentSide.swift */,
 			);
 			path = UnitCirclePlane;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				81F98B522502AC9400A114B2 /* AxisLabel.swift in Sources */,
 				81C017E32503CC32008EEE04 /* UnitCircle.swift in Sources */,
 				81F98B2F25019C7400A114B2 /* ContentView.swift in Sources */,
+				818979042503E5D2008BBD1D /* AdjacentSide.swift in Sources */,
 				81F98B2D25019C7400A114B2 /* SinusoidalFunctionsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,7 @@ import SwiftUI
 struct UnitCircleIllustration: View {
     
     var angle: Degrees
+    var type: SinusoidalType
     
     var body: some View {
         GeometryReader { geometry in
@@ -37,13 +38,27 @@ struct UnitCircleIllustration: View {
                                                        lineCap: .square,
                                                        lineJoin: .round))
                             .padding(.horizontal, padding)
+
+                        // Show appropriate side
+                        if type == .sine {
+                            
+                            // The opposide side length
+                            OppositeSide(angle: 45)
+                                .stroke(Color.red,
+                                        style: StrokeStyle(lineWidth: 2,
+                                                           lineCap: .square))
+                                .padding(.horizontal, padding)
+                            
+                        } else {
+                            
+                            // The adjacent side length
+                            AdjacentSide(angle: 45)
+                                .stroke(Color.green,
+                                        style: StrokeStyle(lineWidth: 2,
+                                                           lineCap: .square))
+                                .padding(.horizontal, padding)
+                        }
                         
-                        // The opposide side length
-                        OppositeSide(angle: 45)
-                            .stroke(Color.red,
-                                    style: StrokeStyle(lineWidth: 2,
-                                                       lineCap: .square))
-                            .padding(.horizontal, padding)
                                                 
                     }
                 }
@@ -58,6 +73,7 @@ struct UnitCircleIllustration: View {
 
 struct UnitCircleIllustration_Previews: PreviewProvider {
     static var previews: some View {
-        UnitCircleIllustration(angle: 45)
+        UnitCircleIllustration(angle: 45, type: .sine)
+        UnitCircleIllustration(angle: 45, type: .cosine)
     }
 }
