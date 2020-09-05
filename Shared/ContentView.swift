@@ -48,7 +48,7 @@ struct ContentView: View {
                                            c: initialC,
                                            angle: 720,
                                            type: functionType)
-                            .stroke(Color.black, style: StrokeStyle(lineWidth: 1.0, dash: [5.0], dashPhase: 5.0))
+                            .stroke(Color.gray, style: StrokeStyle(lineWidth: 1.0, dash: [5.0], dashPhase: 5.0))
                             .padding(.horizontal, padding)
 
                         // The transformed function

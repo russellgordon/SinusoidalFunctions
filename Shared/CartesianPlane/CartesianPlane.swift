@@ -23,7 +23,7 @@ struct CartesianPlane: View {
             // Draw the plane as a shape
             Axes(verticalUnit: height / 64.0,
                  horizontalUnit: planeWidth / 8.0)
-                .stroke(Color.black, style: StrokeStyle(lineWidth: 2,
+                .stroke(Color.primary, style: StrokeStyle(lineWidth: 2,
                                                         lineCap: .round,
                                                         lineJoin: .miter))
                 .padding(.horizontal, padding)
