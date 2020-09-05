@@ -21,6 +21,10 @@ struct ContentView: View {
     @State private var angle: Degrees = 0
     @State private var functionType: SinusoidalType = .sine
     
+    let grey = Color(hue: 240.0/360.0, saturation: 0.15, brightness: 0.45, opacity: 0.75)
+    let green = Color(hue: 135.0/360.0, saturation: 0.72, brightness: 0.73, opacity: 1.0)
+    let red = Color(hue: 3/360.0, saturation: 0.81, brightness: 1.00, opacity: 1.0)
+
     var body: some View {
         
         // Provide dimensions information for the entire device
@@ -48,7 +52,7 @@ struct ContentView: View {
                                            c: initialC,
                                            angle: angle,
                                            type: functionType)
-                            .fill(Color(hue: 240.0/360.0, saturation: 0.15, brightness: 0.45, opacity: 0.75))
+                            .fill(grey)
                             .padding(.horizontal, padding)
 
                         // The transformed function
@@ -59,8 +63,8 @@ struct ContentView: View {
                                                c: c,
                                                angle: angle * k,
                                                type: functionType)
-                                .fill(functionType == .sine ? Color.red : Color.green)
-                                .blendMode(.hardLight)
+                                .fill(functionType == .sine ? red : green)
+                                .blendMode(functionType == .sine ? .hardLight : .darken)
                                 .padding(.horizontal, padding)
                         }
                     }
@@ -98,7 +102,6 @@ struct ContentView: View {
                                     style: StrokeStyle(lineWidth: 2,
                                                        lineCap: .square,
                                                        lineJoin: .round))
-                            .blendMode(.hardLight)
                             .padding(.horizontal, padding)
 
                         if functionType == .sine {
