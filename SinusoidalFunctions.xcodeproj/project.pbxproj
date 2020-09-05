@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		81C017E32503CC32008EEE04 /* UnitCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C017E22503CC32008EEE04 /* UnitCircle.swift */; };
+		81C017E52503CFBC008EEE04 /* UnitCircleIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C017E42503CFBC008EEE04 /* UnitCircleIllustration.swift */; };
+		81C017E62503CFE4008EEE04 /* UnitCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C017E22503CC32008EEE04 /* UnitCircle.swift */; };
+		81C017E72503CFE8008EEE04 /* UnitCircleIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C017E42503CFBC008EEE04 /* UnitCircleIllustration.swift */; };
+		81C017E92503D113008EEE04 /* ReferenceTriangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C017E82503D113008EEE04 /* ReferenceTriangle.swift */; };
 		81ED87D12502E4C5008A578E /* SinusoidalFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED87D02502E4C5008A578E /* SinusoidalFunction.swift */; };
 		81ED87D22502E4C5008A578E /* SinusoidalFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED87D02502E4C5008A578E /* SinusoidalFunction.swift */; };
 		81ED87D52503BBC4008A578E /* UnitCirclePlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED87D42503BBC4008A578E /* UnitCirclePlane.swift */; };
@@ -34,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		81C017E22503CC32008EEE04 /* UnitCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitCircle.swift; sourceTree = "<group>"; };
+		81C017E42503CFBC008EEE04 /* UnitCircleIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitCircleIllustration.swift; sourceTree = "<group>"; };
+		81C017E82503D113008EEE04 /* ReferenceTriangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceTriangle.swift; sourceTree = "<group>"; };
 		81ED87D02502E4C5008A578E /* SinusoidalFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinusoidalFunction.swift; sourceTree = "<group>"; };
 		81ED87D42503BBC4008A578E /* UnitCirclePlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitCirclePlane.swift; sourceTree = "<group>"; };
 		81ED87D72503BC67008A578E /* UnitCircleAxes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitCircleAxes.swift; sourceTree = "<group>"; };
@@ -70,19 +76,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		81C017E12503CC04008EEE04 /* UnitCircle */ = {
-			isa = PBXGroup;
-			children = (
-				81C017E22503CC32008EEE04 /* UnitCircle.swift */,
-			);
-			path = UnitCircle;
-			sourceTree = "<group>";
-		};
 		81ED87D32503BB93008A578E /* UnitCirclePlane */ = {
 			isa = PBXGroup;
 			children = (
 				81ED87D42503BBC4008A578E /* UnitCirclePlane.swift */,
 				81ED87D72503BC67008A578E /* UnitCircleAxes.swift */,
+				81C017E22503CC32008EEE04 /* UnitCircle.swift */,
+				81C017E42503CFBC008EEE04 /* UnitCircleIllustration.swift */,
+				81C017E82503D113008EEE04 /* ReferenceTriangle.swift */,
 			);
 			path = UnitCirclePlane;
 			sourceTree = "<group>";
@@ -100,7 +101,6 @@
 		81F98B1925019C7200A114B2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				81C017E12503CC04008EEE04 /* UnitCircle */,
 				81ED87D32503BB93008A578E /* UnitCirclePlane */,
 				81F98B572502AE8600A114B2 /* CartesianPlane */,
 				81F98B1A25019C7200A114B2 /* SinusoidalFunctionsApp.swift */,
@@ -246,9 +246,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81C017E92503D113008EEE04 /* ReferenceTriangle.swift in Sources */,
 				81F98B4225027A0B00A114B2 /* CGAffineTransform+transformToPlanes.swift in Sources */,
 				81F98B4F2502ABE600A114B2 /* Labels.swift in Sources */,
 				81ED87D52503BBC4008A578E /* UnitCirclePlane.swift in Sources */,
+				81C017E52503CFBC008EEE04 /* UnitCircleIllustration.swift in Sources */,
 				81F98B552502AD7E00A114B2 /* CartesianPlane.swift in Sources */,
 				81F98B4525027A6D00A114B2 /* Axes.swift in Sources */,
 				81ED87D12502E4C5008A578E /* SinusoidalFunction.swift in Sources */,
@@ -267,11 +269,13 @@
 				81F98B4325027A0B00A114B2 /* CGAffineTransform+transformToPlanes.swift in Sources */,
 				81F98B502502ABE600A114B2 /* Labels.swift in Sources */,
 				81ED87D62503BBC4008A578E /* UnitCirclePlane.swift in Sources */,
+				81C017E72503CFE8008EEE04 /* UnitCircleIllustration.swift in Sources */,
 				81F98B562502AD7E00A114B2 /* CartesianPlane.swift in Sources */,
 				81F98B4625027A6D00A114B2 /* Axes.swift in Sources */,
 				81ED87D22502E4C5008A578E /* SinusoidalFunction.swift in Sources */,
 				81ED87D92503BC67008A578E /* UnitCircleAxes.swift in Sources */,
 				81F98B532502AC9400A114B2 /* AxisLabel.swift in Sources */,
+				81C017E62503CFE4008EEE04 /* UnitCircle.swift in Sources */,
 				81F98B3025019C7400A114B2 /* ContentView.swift in Sources */,
 				81F98B2E25019C7400A114B2 /* SinusoidalFunctionsApp.swift in Sources */,
 			);

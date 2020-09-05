@@ -75,6 +75,11 @@ struct ContentView: View {
                             .stroke(Color.gray, lineWidth: 2.0)
                             .padding(.horizontal, padding)
                         
+                        // The reference triangle
+                        ReferenceTriangle(angle: angle)
+                            .fill(Color.gray)
+                            .padding(.horizontal, padding)
+                        
                         // The plane
                         UnitCirclePlane(height: geometry.size.height,
                                         width: geometry.size.width,
