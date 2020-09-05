@@ -37,6 +37,7 @@ struct SinusoidalFunction: Shape {
         var path = Path()
         
         // Build the path of the sinsoidal function
+        var lastX: CGFloat = 0.0
         for theta in stride(from: d.inRadians(), through: angle.inRadians() + d.inRadians(), by: 0.01) {
                         
             // Determine next position
@@ -51,12 +52,25 @@ struct SinusoidalFunction: Shape {
             
             // Add to the path
             if theta == d.inRadians() {
+                
+                // Start of curve
                 path.move(to: CGPoint(x: x, y: y))
+                
             } else {
+
+                // Between start and end
                 path.addLine(to: CGPoint(x: x, y: y))
+                
+                // Save last horizontal position
+                lastX = x
+                
             }
                         
         }
+        
+        // Draw a line to sinusoidal axis
+        // This allows a fill and is connrected to the unit circle
+        path.addLine(to: CGPoint(x: lastX, y: c))
         
         // Define horizontal length of one cycle of the graph
         let period = rect.size.width / (.pi * 2 * 2)

@@ -18,7 +18,7 @@ struct ContentView: View {
     @State private var d: Degrees = 0
     @State private var k: CGFloat = 1
     @State private var c: CGFloat = 0
-    @State private var angle: Degrees = 360
+    @State private var angle: Degrees = 0
     @State private var functionType: SinusoidalType = .sine
     
     var body: some View {
@@ -48,7 +48,8 @@ struct ContentView: View {
                                            c: initialC,
                                            angle: angle,
                                            type: functionType)
-                            .stroke(Color.gray, style: StrokeStyle(lineWidth: 1.0, dash: [5.0], dashPhase: 5.0))
+//                            .stroke(Color.gray, style: StrokeStyle(lineWidth: 1.0, dash: [5.0], dashPhase: 5.0))
+                            .fill(Color.gray)
                             .padding(.horizontal, padding)
 
                         // The transformed function
@@ -59,7 +60,9 @@ struct ContentView: View {
                                                c: c,
                                                angle: angle * k,
                                                type: functionType)
-                                .stroke(Color.red, lineWidth: 2.0)
+//                                .stroke(Color.red, lineWidth: 2.0)
+                                .fill(Color.red)
+                                .blendMode(.hardLight)
                                 .padding(.horizontal, padding)
                         }
                     }
