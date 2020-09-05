@@ -37,7 +37,7 @@ struct ContentView: View {
                     ZStack {
                         
                         // The plane
-                        CartesianPlane(height: geometry.size.height,
+                        CartesianPlane(height: geometry.size.height - 40,
                                        width: geometry.size.width,
                                        padding: padding)
                         
