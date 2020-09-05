@@ -28,16 +28,16 @@ struct ContentView: View {
             
             let padding: CGFloat = 20
             
-            VStack {
+            VStack(spacing: 10) {
                 
-                // Provide dimensions information for the portion of the VStack the plane will occupy
+                // Sinusoidal function
                 GeometryReader { geometry in
                     
                     // Show the plane, and then the function on top of it
                     ZStack {
                         
                         // The plane
-                        CartesianPlane(height: geometry.size.height - 40,
+                        CartesianPlane(height: geometry.size.height - 80,
                                        width: geometry.size.width,
                                        padding: padding)
                         
@@ -63,6 +63,23 @@ struct ContentView: View {
                     }
                     
                 }
+                
+                // Unit circle
+                GeometryReader { geometry in
+                    
+                    // Show the plane, and then the circle on top of it
+                    ZStack {
+                        
+                        UnitCirclePlane(height: geometry.size.height - 40,
+                                       width: geometry.size.width,
+                                       padding: padding)
+
+                        
+                    }
+                    
+                }
+                .background(Color.primary.colorInvert())
+                .padding(.all, 0)
                 
                 // Controls
                 VStack(spacing: 0) {

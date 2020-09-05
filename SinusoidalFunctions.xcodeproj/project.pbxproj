@@ -9,14 +9,18 @@
 /* Begin PBXBuildFile section */
 		81ED87D12502E4C5008A578E /* SinusoidalFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED87D02502E4C5008A578E /* SinusoidalFunction.swift */; };
 		81ED87D22502E4C5008A578E /* SinusoidalFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED87D02502E4C5008A578E /* SinusoidalFunction.swift */; };
+		81ED87D52503BBC4008A578E /* UnitCirclePlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED87D42503BBC4008A578E /* UnitCirclePlane.swift */; };
+		81ED87D62503BBC4008A578E /* UnitCirclePlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED87D42503BBC4008A578E /* UnitCirclePlane.swift */; };
+		81ED87D82503BC67008A578E /* UnitCircleAxes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED87D72503BC67008A578E /* UnitCircleAxes.swift */; };
+		81ED87D92503BC67008A578E /* UnitCircleAxes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED87D72503BC67008A578E /* UnitCircleAxes.swift */; };
 		81F98B2D25019C7400A114B2 /* SinusoidalFunctionsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F98B1A25019C7200A114B2 /* SinusoidalFunctionsApp.swift */; };
 		81F98B2E25019C7400A114B2 /* SinusoidalFunctionsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F98B1A25019C7200A114B2 /* SinusoidalFunctionsApp.swift */; };
 		81F98B2F25019C7400A114B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F98B1B25019C7200A114B2 /* ContentView.swift */; };
 		81F98B3025019C7400A114B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F98B1B25019C7200A114B2 /* ContentView.swift */; };
 		81F98B3125019C7400A114B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81F98B1C25019C7300A114B2 /* Assets.xcassets */; };
 		81F98B3225019C7400A114B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81F98B1C25019C7300A114B2 /* Assets.xcassets */; };
-		81F98B4225027A0B00A114B2 /* CGAffineTransform+transformToTypicalCartesianPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F98B4125027A0B00A114B2 /* CGAffineTransform+transformToTypicalCartesianPlane.swift */; };
-		81F98B4325027A0B00A114B2 /* CGAffineTransform+transformToTypicalCartesianPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F98B4125027A0B00A114B2 /* CGAffineTransform+transformToTypicalCartesianPlane.swift */; };
+		81F98B4225027A0B00A114B2 /* CGAffineTransform+transformToPlanes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F98B4125027A0B00A114B2 /* CGAffineTransform+transformToPlanes.swift */; };
+		81F98B4325027A0B00A114B2 /* CGAffineTransform+transformToPlanes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F98B4125027A0B00A114B2 /* CGAffineTransform+transformToPlanes.swift */; };
 		81F98B4525027A6D00A114B2 /* Axes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F98B4425027A6D00A114B2 /* Axes.swift */; };
 		81F98B4625027A6D00A114B2 /* Axes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F98B4425027A6D00A114B2 /* Axes.swift */; };
 		81F98B4F2502ABE600A114B2 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F98B4E2502ABE600A114B2 /* Labels.swift */; };
@@ -29,6 +33,8 @@
 
 /* Begin PBXFileReference section */
 		81ED87D02502E4C5008A578E /* SinusoidalFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinusoidalFunction.swift; sourceTree = "<group>"; };
+		81ED87D42503BBC4008A578E /* UnitCirclePlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitCirclePlane.swift; sourceTree = "<group>"; };
+		81ED87D72503BC67008A578E /* UnitCircleAxes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitCircleAxes.swift; sourceTree = "<group>"; };
 		81F98B1A25019C7200A114B2 /* SinusoidalFunctionsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinusoidalFunctionsApp.swift; sourceTree = "<group>"; };
 		81F98B1B25019C7200A114B2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		81F98B1C25019C7300A114B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -37,7 +43,7 @@
 		81F98B2925019C7300A114B2 /* SinusoidalFunctions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinusoidalFunctions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81F98B2B25019C7400A114B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81F98B2C25019C7400A114B2 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		81F98B4125027A0B00A114B2 /* CGAffineTransform+transformToTypicalCartesianPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGAffineTransform+transformToTypicalCartesianPlane.swift"; sourceTree = "<group>"; };
+		81F98B4125027A0B00A114B2 /* CGAffineTransform+transformToPlanes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGAffineTransform+transformToPlanes.swift"; sourceTree = "<group>"; };
 		81F98B4425027A6D00A114B2 /* Axes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Axes.swift; sourceTree = "<group>"; };
 		81F98B4E2502ABE600A114B2 /* Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
 		81F98B512502AC9400A114B2 /* AxisLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisLabel.swift; sourceTree = "<group>"; };
@@ -62,6 +68,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		81ED87D32503BB93008A578E /* UnitCirclePlane */ = {
+			isa = PBXGroup;
+			children = (
+				81ED87D42503BBC4008A578E /* UnitCirclePlane.swift */,
+				81ED87D72503BC67008A578E /* UnitCircleAxes.swift */,
+			);
+			path = UnitCirclePlane;
+			sourceTree = "<group>";
+		};
 		81F98B1425019C7200A114B2 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +90,7 @@
 		81F98B1925019C7200A114B2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				81ED87D32503BB93008A578E /* UnitCirclePlane */,
 				81F98B572502AE8600A114B2 /* CartesianPlane */,
 				81F98B1A25019C7200A114B2 /* SinusoidalFunctionsApp.swift */,
 				81F98B1B25019C7200A114B2 /* ContentView.swift */,
@@ -117,7 +133,7 @@
 				81F98B4425027A6D00A114B2 /* Axes.swift */,
 				81F98B4E2502ABE600A114B2 /* Labels.swift */,
 				81F98B512502AC9400A114B2 /* AxisLabel.swift */,
-				81F98B4125027A0B00A114B2 /* CGAffineTransform+transformToTypicalCartesianPlane.swift */,
+				81F98B4125027A0B00A114B2 /* CGAffineTransform+transformToPlanes.swift */,
 			);
 			path = CartesianPlane;
 			sourceTree = "<group>";
@@ -219,11 +235,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81F98B4225027A0B00A114B2 /* CGAffineTransform+transformToTypicalCartesianPlane.swift in Sources */,
+				81F98B4225027A0B00A114B2 /* CGAffineTransform+transformToPlanes.swift in Sources */,
 				81F98B4F2502ABE600A114B2 /* Labels.swift in Sources */,
+				81ED87D52503BBC4008A578E /* UnitCirclePlane.swift in Sources */,
 				81F98B552502AD7E00A114B2 /* CartesianPlane.swift in Sources */,
 				81F98B4525027A6D00A114B2 /* Axes.swift in Sources */,
 				81ED87D12502E4C5008A578E /* SinusoidalFunction.swift in Sources */,
+				81ED87D82503BC67008A578E /* UnitCircleAxes.swift in Sources */,
 				81F98B522502AC9400A114B2 /* AxisLabel.swift in Sources */,
 				81F98B2F25019C7400A114B2 /* ContentView.swift in Sources */,
 				81F98B2D25019C7400A114B2 /* SinusoidalFunctionsApp.swift in Sources */,
@@ -234,11 +252,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81F98B4325027A0B00A114B2 /* CGAffineTransform+transformToTypicalCartesianPlane.swift in Sources */,
+				81F98B4325027A0B00A114B2 /* CGAffineTransform+transformToPlanes.swift in Sources */,
 				81F98B502502ABE600A114B2 /* Labels.swift in Sources */,
+				81ED87D62503BBC4008A578E /* UnitCirclePlane.swift in Sources */,
 				81F98B562502AD7E00A114B2 /* CartesianPlane.swift in Sources */,
 				81F98B4625027A6D00A114B2 /* Axes.swift in Sources */,
 				81ED87D22502E4C5008A578E /* SinusoidalFunction.swift in Sources */,
+				81ED87D92503BC67008A578E /* UnitCircleAxes.swift in Sources */,
 				81F98B532502AC9400A114B2 /* AxisLabel.swift in Sources */,
 				81F98B3025019C7400A114B2 /* ContentView.swift in Sources */,
 				81F98B2E25019C7400A114B2 /* SinusoidalFunctionsApp.swift in Sources */,
