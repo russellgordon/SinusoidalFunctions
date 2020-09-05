@@ -37,9 +37,8 @@ struct SinusoidalFunction: Shape {
         var path = Path()
         
         // Build the path of the sinsoidal function
-        for theta in stride(from: 0, through: angle.inRadians(), by: 0.01) {
-            
-            
+        for theta in stride(from: d.inRadians(), through: angle.inRadians() + d.inRadians(), by: 0.01) {
+                        
             // Determine next position
             let x = theta
             
@@ -51,7 +50,7 @@ struct SinusoidalFunction: Shape {
             }
             
             // Add to the path
-            if theta == 0 {
+            if theta == d.inRadians() {
                 path.move(to: CGPoint(x: x, y: y))
             } else {
                 path.addLine(to: CGPoint(x: x, y: y))
@@ -87,9 +86,9 @@ struct SinusoidalFunction_Previews: PreviewProvider {
                                width: geometry.size.width,
                                padding: padding)
                 
-                // The graph (not here yet)
+                // The graph
                 SinusoidalFunction(a: 1,
-                                   d: 0,
+                                   d: 90,
                                    k: 1,
                                    c: 0,
                                    angle: 720,

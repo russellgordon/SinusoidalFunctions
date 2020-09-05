@@ -18,7 +18,7 @@ struct ContentView: View {
     @State private var d: Degrees = 0
     @State private var k: CGFloat = 1
     @State private var c: CGFloat = 0
-    @State private var angle: Degrees = 0
+    @State private var angle: Degrees = 360
     @State private var functionType: SinusoidalType = .sine
     
     var body: some View {
@@ -46,7 +46,7 @@ struct ContentView: View {
                                            d: initialD,
                                            k: initialK,
                                            c: initialC,
-                                           angle: 720,
+                                           angle: angle,
                                            type: functionType)
                             .stroke(Color.gray, style: StrokeStyle(lineWidth: 1.0, dash: [5.0], dashPhase: 5.0))
                             .padding(.horizontal, padding)
@@ -56,7 +56,7 @@ struct ContentView: View {
                                            d: d,
                                            k: k,
                                            c: c,
-                                           angle: 720,
+                                           angle: angle * k,
                                            type: functionType)
                             .stroke(Color.red, lineWidth: 2.0)
                             .padding(.horizontal, padding)
@@ -84,6 +84,11 @@ struct ContentView: View {
                 // Controls
                 VStack(spacing: 0) {
                     
+                    // Angle of rotation
+                    Text("Angle, 𝜽 = " + String(format: "%.1f", angle))
+                    Slider(value: $angle, in: 0...360, step: 1.0)
+                        .padding(.horizontal, padding)
+
                     // Equation
                     if functionType == .sine {
                         Image("sine")
@@ -97,6 +102,7 @@ struct ContentView: View {
                             .frame(minHeight: 55, maxHeight: 55)
                     }
                     
+                    // Type of function
                     Picker("Function type", selection: $functionType) {
                         ForEach(SinusoidalType.allCases, id: \.rawValue) { value in
                             Text("\(value.rawValue)").tag(value)
@@ -104,10 +110,10 @@ struct ContentView: View {
                     }
                     .pickerStyle(SegmentedPickerStyle())
                     .padding(.horizontal, padding)
-                                    
-                    // Controls and unit circle will show here eventually
+                                                        
+                    // Transformation parameters
                     HStack {
-                        
+                                                
                         VStack {
                             Text("a = " + String(format: "%.1f", a))
                             Slider(value: $a, in: -2...2, step: 0.1)
