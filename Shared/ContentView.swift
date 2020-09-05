@@ -59,8 +59,7 @@ struct ContentView: View {
                                                c: c,
                                                angle: angle * k,
                                                type: functionType)
-//                                .stroke(Color.red, lineWidth: 2.0)
-                                .fill(Color.red)
+                                .fill(functionType == .sine ? Color.red : Color.green)
                                 .blendMode(.hardLight)
                                 .padding(.horizontal, padding)
                         }
