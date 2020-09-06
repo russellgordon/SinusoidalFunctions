@@ -53,7 +53,7 @@ struct ContentView: View {
             
         } else if horizontalSizeClass == .regular && verticalSizeClass == .regular {
             
-            Presentation(verticalOrientation: true)
+            Presentation(verticalOrientation: false)
             
         } else {
 
