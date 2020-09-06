@@ -84,7 +84,7 @@
 		81F98B1C25019C7300A114B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81F98B2125019C7300A114B2 /* SinusoidalFunctions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinusoidalFunctions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81F98B2425019C7300A114B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		81F98B2925019C7300A114B2 /* SinusoidalFunctions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinusoidalFunctions.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		81F98B2925019C7300A114B2 /* Periodically.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Periodically.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81F98B2B25019C7400A114B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81F98B2C25019C7400A114B2 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		81F98B4125027A0B00A114B2 /* CGAffineTransform+transformToPlanes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGAffineTransform+transformToPlanes.swift"; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				81F98B2125019C7300A114B2 /* SinusoidalFunctions.app */,
-				81F98B2925019C7300A114B2 /* SinusoidalFunctions.app */,
+				81F98B2925019C7300A114B2 /* Periodically.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -247,7 +247,7 @@
 			);
 			name = "SinusoidalFunctions (macOS)";
 			productName = "SinusoidalFunctions (macOS)";
-			productReference = 81F98B2925019C7300A114B2 /* SinusoidalFunctions.app */;
+			productReference = 81F98B2925019C7300A114B2 /* Periodically.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -546,7 +546,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ca.russellgordon.SinusoidalFunctions;
-				PRODUCT_NAME = SinusoidalFunctions;
+				PRODUCT_NAME = Periodically;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -570,7 +570,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ca.russellgordon.SinusoidalFunctions;
-				PRODUCT_NAME = SinusoidalFunctions;
+				PRODUCT_NAME = Periodically;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
