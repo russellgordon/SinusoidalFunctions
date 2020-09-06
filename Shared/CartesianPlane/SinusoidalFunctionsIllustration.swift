@@ -9,18 +9,9 @@ import SwiftUI
 
 struct SinusoidalFunctionsIllustration: View {
     
-    let a: CGFloat
-    let d: Degrees
-    let k: CGFloat
-    let c: CGFloat
+    let parameters: TransformationParameters
     let angle: Degrees
-    let functionType: SinusoidalType = .sine
-    
-    let initialA: CGFloat
-    let initialD: Degrees
-    let initialK: CGFloat
-    let initialC: CGFloat
-    
+    let functionType: SinusoidalType
     let padding: CGFloat
 
     var body: some View {
@@ -35,31 +26,25 @@ struct SinusoidalFunctionsIllustration: View {
                                padding: padding)
                 
                 // The original function
-                SinusoidalFunction(a: initialA,
-                                   d: initialD,
-                                   k: initialK,
-                                   c: initialC,
+                SinusoidalFunction(parameters: TransformationParameters.defaultValues,
                                    angle: angle,
-                                   type: functionType)
+                                   functionType: functionType)
                     .fill(Color.parentFunction)
                     .padding(.horizontal, padding)
 
                 // The transformed function
-                if k != 0 {
-                    SinusoidalFunction(a: a,
-                                       d: d,
-                                       k: k,
-                                       c: c,
-                                       angle: angle * k,
-                                       type: functionType)
+                if parameters.k != 0 {
+                    SinusoidalFunction(parameters: parameters,
+                                       angle: angle * parameters.k,
+                                       functionType: functionType)
                         .fill(functionType == .sine ? Color.transformedSine : Color.transformedCosine)
                         .padding(.horizontal, padding)
                     
                 }
                 
                 // Show the sinusoidal axis when there is a vertical shift
-                if c != 0 {
-                    SinusoidalAxis(c: c)
+                if parameters.c != 0 {
+                    SinusoidalAxis(c: parameters.c)
                         .stroke(functionType == .sine ? Color.transformedSine : Color.transformedCosine, style: StrokeStyle(lineWidth: 1.0, dash: [5.0], dashPhase: 5.0))
                         .padding(.horizontal, 20.0)
 
@@ -73,15 +58,12 @@ struct SinusoidalFunctionsIllustration: View {
 
 struct SinusoidalFunctionsIllustration_Previews: PreviewProvider {
     static var previews: some View {
-        SinusoidalFunctionsIllustration(a: 1,
-                                        d: 0,
-                                        k: 1,
-                                        c: 0,
+        SinusoidalFunctionsIllustration(parameters: TransformationParameters(a: 1,
+                                                                             d: 0,
+                                                                             k: 1,
+                                                                             c: 0.5),
                                         angle: 45,
-                                        initialA: 1,
-                                        initialD: 0,
-                                        initialK: 1,
-                                        initialC: 0,
+                                        functionType: .sine,
                                         padding: 20)
     }
 }

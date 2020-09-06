@@ -9,12 +9,19 @@ import SwiftUI
 
 struct SinusoidalFunction: Shape {
     
-    let a: CGFloat
-    let d: CGFloat
-    let k: CGFloat
-    let c: CGFloat
+    let p: TransformationParameters
     let angle: CGFloat
-    let type: SinusoidalType
+    let functionType: SinusoidalType
+    
+    init(parameters p: TransformationParameters,
+         angle: CGFloat,
+         functionType: SinusoidalType) {
+        
+        self.p = p
+        self.angle = angle
+        self.functionType = functionType
+        
+    }
     
     func path(in rect: CGRect) -> Path {
         
@@ -24,20 +31,22 @@ struct SinusoidalFunction: Shape {
         // Build the path of the sinsoidal function
         var firstX: CGFloat = 0.0
         var lastX: CGFloat = 0.0
-        for theta in stride(from: d.inRadians(), through: angle.inRadians() + d.inRadians(), by: 0.01) {
+        for theta in stride(from: p.d.inRadians(),
+                            through: angle.inRadians() + p.d.inRadians(),
+                            by: 0.01) {
                         
             // Determine next position
             let x = theta
             
             var y: CGFloat = 0.0
-            if type == .sine {
-                y = a * sin((x - d.inRadians()) / k) + c
+            if functionType == .sine {
+                y = p.a * sin((x - p.d.inRadians()) / p.k) + p.c
             } else {
-                y = a * cos((x - d.inRadians()) / k) + c
+                y = p.a * cos((x - p.d.inRadians()) / p.k) + p.c
             }
             
             // Add to the path
-            if theta == d.inRadians() {
+            if theta == p.d.inRadians() {
                 
                 // Start of curve
                 path.move(to: CGPoint(x: x, y: y))
@@ -59,11 +68,11 @@ struct SinusoidalFunction: Shape {
         
         // Draw a line to sinusoidal axis
         // This allows a fill and is connected to the unit circle
-        path.addLine(to: CGPoint(x: lastX, y: c))
+        path.addLine(to: CGPoint(x: lastX, y: p.c))
         
         // Draw a line back to the starting X position for cosine, so the fill is correct
-        if type == .cosine {
-            path.addLine(to: CGPoint(x: firstX, y: c))
+        if functionType == .cosine {
+            path.addLine(to: CGPoint(x: firstX, y: p.c))
         }
         
         // Define horizontal length of one cycle of the graph
@@ -95,12 +104,12 @@ struct SinusoidalFunction_Previews: PreviewProvider {
                                padding: padding)
                 
                 // The graph
-                SinusoidalFunction(a: 1,
-                                   d: 90,
-                                   k: 1,
-                                   c: 0,
+                SinusoidalFunction(parameters: TransformationParameters(a: 1,
+                                                                        d: 90,
+                                                                        k: 1.5,
+                                                                        c: 0.5),
                                    angle: 720,
-                                   type: .sine)
+                                   functionType: .sine)
                     .stroke(Color.red, lineWidth: 2.0)
                     .padding(.horizontal, padding)
                 

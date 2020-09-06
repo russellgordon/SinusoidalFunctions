@@ -9,9 +9,13 @@ import SwiftUI
 
 struct AdjacentSide: Shape {
     
+    var p: TransformationParameters
     var angle: Degrees
-    var a: CGFloat
-    var c: CGFloat
+    
+    init(parameters p: TransformationParameters, angle: Degrees) {
+        self.p = p
+        self.angle = angle
+    }
         
     func path(in rect: CGRect) -> Path {
         
@@ -22,10 +26,10 @@ struct AdjacentSide: Shape {
         var path = Path()
         
         // Start at origin
-        path.move(to: CGPoint(x: 0, y: c * qL))
+        path.move(to: CGPoint(x: 0, y: p.c * qL))
 
         // End at point on horizontal axis
-        path.addLine(to: CGPoint(x: a * cos(angle.inRadians()) * qL, y: c * qL))
+        path.addLine(to: CGPoint(x: p.a * cos(angle.inRadians()) * qL, y: p.c * qL))
         
         // Return the entire path of the function
         return path
@@ -51,12 +55,12 @@ struct AdjacentSide_Previews: PreviewProvider {
                                         padding: padding)
                         
                         // The graph
-                        UnitCircle(a: 1, c: 0)
+                        UnitCircle(parameters: TransformationParameters.defaultValues)
                             .stroke(Color.primary, lineWidth: 2.0)
                             .padding(.horizontal, padding)
                         
                         // The reference triangle
-                        ReferenceTriangle(angle: 45, a: 1, c: 0)
+                        ReferenceTriangle(parameters: TransformationParameters.defaultValues, angle: 45)
                             .stroke(Color.primary,
                                     style: StrokeStyle(lineWidth: 2,
                                                        lineCap: .square,
@@ -64,7 +68,8 @@ struct AdjacentSide_Previews: PreviewProvider {
                             .padding(.horizontal, padding)
                         
                         // The opposide side length
-                        AdjacentSide(angle: 45, a: 1, c: 0)
+                        AdjacentSide(parameters: TransformationParameters.defaultValues,
+                                     angle: 45)
                             .stroke(Color.green,
                                     style: StrokeStyle(lineWidth: 2,
                                                        lineCap: .square))

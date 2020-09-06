@@ -9,10 +9,7 @@ import SwiftUI
 
 struct Controls: View {
     
-    @Binding var a: CGFloat
-    @Binding var d: Degrees
-    @Binding var k: CGFloat
-    @Binding var c: CGFloat
+    @Binding var parameters: TransformationParameters
     @Binding var angle: Degrees
     @Binding var functionType: SinusoidalType
     let padding: CGFloat
@@ -53,22 +50,22 @@ struct Controls: View {
             HStack {
                                         
                 VStack {
-                    Text("a = " + String(format: "%.1f", a))
-                    Slider(value: $a, in: -2...2, step: 0.1)
+                    Text("a = " + String(format: "%.1f", parameters.a))
+                    Slider(value: $parameters.a, in: -2...2, step: 0.1)
                         .padding(.horizontal, padding)
 
-                    Text("c = " + String(format: "%.1f", c))
-                    Slider(value: $c, in: -2...2, step: 0.1)
+                    Text("c = " + String(format: "%.1f", parameters.c))
+                    Slider(value: $parameters.c, in: -2...2, step: 0.1)
                         .padding(.horizontal, padding)
                 }
                 
                 VStack {
-                    Text("k = " + String(format: "%.1f", k))
-                    Slider(value: $k, in: -2...2, step: 0.1)
+                    Text("k = " + String(format: "%.1f", parameters.k))
+                    Slider(value: $parameters.k, in: -2...2, step: 0.1)
                         .padding(.horizontal, padding)
 
-                    Text("d = " + String(format: "%.1f", d))
-                    Slider(value: $d, in: 0...720, step: 1.0)
+                    Text("d = " + String(format: "%.1f", parameters.d))
+                    Slider(value: $parameters.d, in: 0...720, step: 1.0)
                         .padding(.horizontal, padding)
 
                 }

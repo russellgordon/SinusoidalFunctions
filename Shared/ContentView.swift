@@ -10,18 +10,13 @@ import SwiftUI
 struct ContentView: View {
     
     // Control shape and type of curve
-    @State private var a: CGFloat = 1
-    @State private var d: Degrees = 0
-    @State private var k: CGFloat = 1
-    @State private var c: CGFloat = 0
+    @State private var parameters = TransformationParameters(a: 1,
+                                                             d: 0,
+                                                             k: 1,
+                                                             c: 0)
     @State private var angle: Degrees = 0
     @State private var functionType: SinusoidalType = .sine
     
-    let initialA: CGFloat = 1
-    let initialD: Degrees = 0
-    let initialK: CGFloat = 1
-    let initialC: CGFloat = 0
-
     var body: some View {
         
         // Provide dimensions information for the entire device
@@ -32,31 +27,19 @@ struct ContentView: View {
             VStack(spacing: 15) {
                 
                 // Sinusoidal function
-                SinusoidalFunctionsIllustration(a: a,
-                                                d: d,
-                                                k: k,
-                                                c: c,
+                SinusoidalFunctionsIllustration(parameters: parameters,
                                                 angle: angle,
-                                                initialA: initialA,
-                                                initialD: initialD,
-                                                initialK: initialK,
-                                                initialC: initialC,
+                                                functionType: functionType,
                                                 padding: 20)
-                
+
                 // Unit circle
-                UnitCircleIllustration(a: a,
-                                       c: c,
-                                       initialA: initialA,
-                                       initialC: initialC,
+                UnitCircleIllustration(parameters: parameters,
                                        angle: angle,
                                        functionType: functionType,
                                        padding: padding)
                 
                 // Controls
-                Controls(a: $a,
-                         d: $d,
-                         k: $k,
-                         c: $c,
+                Controls(parameters: $parameters,
                          angle: $angle,
                          functionType: $functionType,
                          padding: padding)

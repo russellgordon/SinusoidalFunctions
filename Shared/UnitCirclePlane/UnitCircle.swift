@@ -9,8 +9,11 @@ import SwiftUI
 
 struct UnitCircle: Shape {
     
-    var a: CGFloat
-    var c: CGFloat
+    let p: TransformationParameters
+
+    init(parameters p: TransformationParameters) {
+        self.p = p
+    }
         
     func path(in rect: CGRect) -> Path {
         
@@ -21,7 +24,7 @@ struct UnitCircle: Shape {
         var path = Path()
         
         // Build the path of the sinsoidal function
-        path.addEllipse(in: CGRect(x: -1 * qL * a, y: -1 * qL * a + c * qL, width: qL * 2 * a, height: qL * 2 * a))
+        path.addEllipse(in: CGRect(x: -1 * qL * p.a, y: -1 * qL * p.a + p.c * qL, width: qL * 2 * p.a, height: qL * 2 * p.a))
         
         // Return the entire path of the function
         return path
@@ -42,7 +45,10 @@ struct UnitCircle_Previews: PreviewProvider {
                         let padding: CGFloat = 20
 
                         // The graph
-                        UnitCircle(a: 0.5, c: 1)
+                        UnitCircle(parameters: TransformationParameters(a: 0.5,
+                                                                        d: 0,
+                                                                        k: 1,
+                                                                        c: 1))
                             .stroke(Color.gray, lineWidth: 2.0)
                             .padding(.horizontal, padding)
                         
