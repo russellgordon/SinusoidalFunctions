@@ -17,6 +17,7 @@
 		818EADF7250516CB00A23D0F /* Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EADF6250516CB00A23D0F /* Controls.swift */; };
 		818EADF9250518D500A23D0F /* SinusoidalFunctionsIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EADF8250518D500A23D0F /* SinusoidalFunctionsIllustration.swift */; };
 		818EADFB25051CF700A23D0F /* TransformationParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EADFA25051CF700A23D0F /* TransformationParameters.swift */; };
+		818EADFD250529AA00A23D0F /* CycleStartAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EADFC250529AA00A23D0F /* CycleStartAxis.swift */; };
 		81C017E32503CC32008EEE04 /* UnitCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C017E22503CC32008EEE04 /* UnitCircle.swift */; };
 		81C017E52503CFBC008EEE04 /* UnitCircleIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C017E42503CFBC008EEE04 /* UnitCircleIllustration.swift */; };
 		81C017E62503CFE4008EEE04 /* UnitCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C017E22503CC32008EEE04 /* UnitCircle.swift */; };
@@ -57,6 +58,7 @@
 		818EADF6250516CB00A23D0F /* Controls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controls.swift; sourceTree = "<group>"; };
 		818EADF8250518D500A23D0F /* SinusoidalFunctionsIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinusoidalFunctionsIllustration.swift; sourceTree = "<group>"; };
 		818EADFA25051CF700A23D0F /* TransformationParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationParameters.swift; sourceTree = "<group>"; };
+		818EADFC250529AA00A23D0F /* CycleStartAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleStartAxis.swift; sourceTree = "<group>"; };
 		81C017E22503CC32008EEE04 /* UnitCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitCircle.swift; sourceTree = "<group>"; };
 		81C017E42503CFBC008EEE04 /* UnitCircleIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitCircleIllustration.swift; sourceTree = "<group>"; };
 		81C017E82503D113008EEE04 /* ReferenceTriangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceTriangle.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				81F98B4125027A0B00A114B2 /* CGAffineTransform+transformToPlanes.swift */,
 				81ED87D02502E4C5008A578E /* SinusoidalFunction.swift */,
 				818979052503ECD3008BBD1D /* SinusoidalAxis.swift */,
+				818EADFC250529AA00A23D0F /* CycleStartAxis.swift */,
 				818EADF8250518D500A23D0F /* SinusoidalFunctionsIllustration.swift */,
 			);
 			path = CartesianPlane;
@@ -296,6 +299,7 @@
 				81C017E92503D113008EEE04 /* ReferenceTriangle.swift in Sources */,
 				818EADF42505161E00A23D0F /* SinusoidalType.swift in Sources */,
 				818979022503DF15008BBD1D /* OppositeSide.swift in Sources */,
+				818EADFD250529AA00A23D0F /* CycleStartAxis.swift in Sources */,
 				81F98B4225027A0B00A114B2 /* CGAffineTransform+transformToPlanes.swift in Sources */,
 				81F98B4F2502ABE600A114B2 /* Labels.swift in Sources */,
 				81ED87D52503BBC4008A578E /* UnitCirclePlane.swift in Sources */,

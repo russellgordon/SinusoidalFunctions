@@ -49,6 +49,15 @@ struct SinusoidalFunctionsIllustration: View {
                         .padding(.horizontal, 20.0)
 
                 }
+
+                // Show the the start of a cycle when there is a horizontal shift
+                if parameters.d != 0 {
+                    CycleStartAxis(d: parameters.d)
+                        .stroke(functionType == .sine ? Color.transformedSine : Color.transformedCosine, style: StrokeStyle(lineWidth: 1.0, dash: [5.0], dashPhase: 5.0))
+                        .padding(.horizontal, 20.0)
+
+                }
+
             }
             
         }
@@ -59,7 +68,7 @@ struct SinusoidalFunctionsIllustration: View {
 struct SinusoidalFunctionsIllustration_Previews: PreviewProvider {
     static var previews: some View {
         SinusoidalFunctionsIllustration(parameters: TransformationParameters(a: 1,
-                                                                             d: 0,
+                                                                             d: 90,
                                                                              k: 1,
                                                                              c: 0.5),
                                         angle: 45,
