@@ -14,7 +14,7 @@ struct ContentView: View {
                                                              d: 0,
                                                              k: 1,
                                                              c: 0)
-    @State private var angle: Degrees = 0
+    @State private var angle: Degrees = 45
     @State private var functionType: SinusoidalType = .sine
     
     var body: some View {
@@ -31,13 +31,19 @@ struct ContentView: View {
                                                 angle: angle,
                                                 functionType: functionType,
                                                 padding: 20)
+                    .onTapGesture(count: 2) {
+                        reset()
+                    }
 
                 // Unit circle
                 UnitCircleIllustration(parameters: parameters,
                                        angle: angle,
                                        functionType: functionType,
                                        padding: padding)
-                
+                    .onTapGesture(count: 2) {
+                        reset()
+                    }
+
                 // Controls
                 Controls(parameters: $parameters,
                          angle: $angle,
@@ -47,6 +53,12 @@ struct ContentView: View {
             }
             
         }
+    }
+    
+    func reset() {
+        // Reset transformations and angle of rotation
+        parameters = TransformationParameters.defaultValues
+        angle = 45
     }
     
 }
