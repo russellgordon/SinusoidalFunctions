@@ -32,188 +32,34 @@ struct ContentView: View {
             VStack(spacing: 15) {
                 
                 // Sinusoidal function
-                GeometryReader { geometry in
-                    
-                    // Show the plane, and then the function on top of it
-                    ZStack {
-                        
-                        // The plane
-                        CartesianPlane(height: geometry.size.height - 80,
-                                       width: geometry.size.width,
-                                       padding: padding)
-                        
-                        // The original function
-                        SinusoidalFunction(a: initialA,
-                                           d: initialD,
-                                           k: initialK,
-                                           c: initialC,
-                                           angle: angle,
-                                           type: functionType)
-                            .fill(Color.parentFunction)
-                            .padding(.horizontal, padding)
-
-                        // The transformed function
-                        if k != 0 {
-                            SinusoidalFunction(a: a,
-                                               d: d,
-                                               k: k,
-                                               c: c,
-                                               angle: angle * k,
-                                               type: functionType)
-                                .fill(functionType == .sine ? Color.transformedSine : Color.transformedCosine)
-                                .padding(.horizontal, padding)
-                            
-                        }
-                        
-                        // Show the sinusoidal axis when there is a vertical shift
-                        if c != 0 {
-                            SinusoidalAxis(c: c)
-                                .stroke(functionType == .sine ? Color.transformedSine : Color.transformedCosine, style: StrokeStyle(lineWidth: 1.0, dash: [5.0], dashPhase: 5.0))
-                                .padding(.horizontal, 20.0)
-
-                        }
-                    }
-                    
-                }
+                SinusoidalFunctionsIllustration(a: a,
+                                                d: d,
+                                                k: k,
+                                                c: c,
+                                                angle: angle,
+                                                initialA: initialA,
+                                                initialD: initialD,
+                                                initialK: initialK,
+                                                initialC: initialC,
+                                                padding: 20)
                 
                 // Unit circle
-                GeometryReader { geometry in
-                    
-                    // Show the plane, and then the circle on top of it
-                    ZStack {
-                        
-                        // The plane
-                        UnitCirclePlane(height: geometry.size.height,
-                                        width: geometry.size.width,
-                                        padding: padding)
-
-                        // The unit circle for the original function
-                        UnitCircle(a: 1, c: 0)
-                            .stroke(Color.primary, lineWidth: 1.0)
-                            .padding(.horizontal, padding)
-
-                        // The unit circle for the transformed function
-                        UnitCircle(a: a, c: c)
-                            .stroke(Color.primary, lineWidth: 2.0)
-                            .padding(.horizontal, padding)
-
-                        // The reference triangle for original function
-                        ReferenceTriangle(angle: angle, a: initialA, c: initialC)
-                            .stroke(Color.primary,
-                                    style: StrokeStyle(lineWidth: 1,
-                                                       lineCap: .square,
-                                                       lineJoin: .round))
-                            .padding(.horizontal, padding)
-
-                        // The reference triangle for transformed function
-                        ReferenceTriangle(angle: angle, a: a, c: c)
-                            .stroke(Color.primary,
-                                    style: StrokeStyle(lineWidth: 2,
-                                                       lineCap: .square,
-                                                       lineJoin: .round))
-                            .padding(.horizontal, padding)
-
-                        if functionType == .sine {
-                            
-                            // The opposite side length
-                            OppositeSide(angle: angle, a: initialA, c: initialC)
-                                .stroke(Color.gray,
-                                        style: StrokeStyle(lineWidth: 2,
-                                                           lineCap: .square))
-                                .padding(.horizontal, padding)
-
-                            // The opposite side length for transformed function
-                            OppositeSide(angle: angle, a: a, c: c)
-                                .stroke(Color.red,
-                                        style: StrokeStyle(lineWidth: 2,
-                                                           lineCap: .square))
-                                .padding(.horizontal, padding)
-
-                        } else {
-                            
-                            // The adjacent side length
-                            AdjacentSide(angle: angle, a: initialA, c: initialC)
-                                .stroke(Color.gray,
-                                        style: StrokeStyle(lineWidth: 2,
-                                                           lineCap: .square))
-                                .padding(.horizontal, padding)
-
-                            // The adjacent side length for the transformed function
-                            AdjacentSide(angle: angle, a: a, c: c)
-                                .stroke(Color.green,
-                                        style: StrokeStyle(lineWidth: 2,
-                                                           lineCap: .square))
-                                .padding(.horizontal, padding)
-
-                        }
-                        
-
-                    }
-                    
-                }
-                .background(Color.primary.colorInvert())
-                .padding(.all, 0)
+                UnitCircleIllustration(a: a,
+                                       c: c,
+                                       initialA: initialA,
+                                       initialC: initialC,
+                                       angle: angle,
+                                       functionType: functionType,
+                                       padding: padding)
                 
                 // Controls
-                VStack(spacing: 0) {
-                    
-                    // Angle of rotation
-                    Text("Angle, 𝜽 = " + String(format: "%.1f", angle))
-                    Slider(value: $angle, in: 0...360, step: 1.0)
-                        .padding(.horizontal, padding)
-
-                    // Equation
-                    if functionType == .sine {
-                        Image("sine")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(minHeight: 55, maxHeight: 55)
-                    } else {
-                        Image("cosine")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(minHeight: 55, maxHeight: 55)
-                    }
-                    
-                    // Type of function
-                    Picker("Function type", selection: $functionType) {
-                        ForEach(SinusoidalType.allCases, id: \.rawValue) { value in
-                            Text("\(value.rawValue)").tag(value)
-                        }
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .padding(.horizontal, padding)
-                                                        
-                    // Transformation parameters
-                    HStack {
-                                                
-                        VStack {
-                            Text("a = " + String(format: "%.1f", a))
-                            Slider(value: $a, in: -2...2, step: 0.1)
-                                .padding(.horizontal, padding)
-
-                            Text("c = " + String(format: "%.1f", c))
-                            Slider(value: $c, in: -2...2, step: 0.1)
-                                .padding(.horizontal, padding)
-                        }
-                        
-                        VStack {
-                            Text("k = " + String(format: "%.1f", k))
-                            Slider(value: $k, in: -2...2, step: 0.1)
-                                .padding(.horizontal, padding)
-
-                            Text("d = " + String(format: "%.1f", d))
-                            Slider(value: $d, in: 0...720, step: 1.0)
-                                .padding(.horizontal, padding)
-
-                        }
-
-
-                    }
-                    .padding(.vertical, padding)
-                }
-                .background(Color.primary.colorInvert())
-                .padding(.all, 0)
+                Controls(a: $a,
+                         d: $d,
+                         k: $k,
+                         c: $c,
+                         angle: $angle,
+                         functionType: $functionType,
+                         padding: padding)
                 
             }
             

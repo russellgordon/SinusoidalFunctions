@@ -7,21 +7,6 @@
 
 import SwiftUI
 
-enum SinusoidalType: String, CaseIterable {    
-    case sine = "sine"
-    case cosine = "cosine"
-}
-
-typealias Degrees = CGFloat
-
-extension Degrees {
-    
-    func inRadians() -> CGFloat {
-        return self * .pi / 180.0
-    }
-    
-}
-
 struct SinusoidalFunction: Shape {
     
     let a: CGFloat
