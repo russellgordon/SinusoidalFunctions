@@ -105,9 +105,9 @@ struct SinusoidalFunction_Previews: PreviewProvider {
                 
                 // The graph
                 SinusoidalFunction(parameters: TransformationParameters(a: 1,
-                                                                        d: 90,
-                                                                        k: 1.5,
-                                                                        c: 0.5),
+                                                                        d: 0,
+                                                                        k: 1,
+                                                                        c: 2),
                                    angle: 720,
                                    functionType: .sine)
                     .stroke(Color.red, lineWidth: 2.0)

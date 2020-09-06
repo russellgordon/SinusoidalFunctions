@@ -39,6 +39,7 @@ struct SinusoidalFunctionsIllustration: View {
                                        functionType: functionType)
                         .fill(functionType == .sine ? Color.transformedSine : Color.transformedCosine)
                         .padding(.horizontal, padding)
+                        .clipped()
                     
                 }
                 
@@ -70,7 +71,7 @@ struct SinusoidalFunctionsIllustration_Previews: PreviewProvider {
         SinusoidalFunctionsIllustration(parameters: TransformationParameters(a: 1,
                                                                              d: 90,
                                                                              k: 1,
-                                                                             c: 0.5),
+                                                                             c: 1.5),
                                         angle: 45,
                                         functionType: .sine,
                                         padding: 20)

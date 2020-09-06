@@ -97,6 +97,7 @@ struct UnitCircleIllustration: View {
             
         }
         .padding(.all, 0)
+        .clipped()
 
     }
 }
