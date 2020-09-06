@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8183797E25056E3C0034F6FF /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8189790A25050BED008BBD1D /* ColorExtensions.swift */; };
+		8183797F25056E3C0034F6FF /* Degrees.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EADF12505160000A23D0F /* Degrees.swift */; };
+		8183798025056E3C0034F6FF /* SinusoidalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EADF32505161E00A23D0F /* SinusoidalType.swift */; };
+		8183798125056E3C0034F6FF /* TransformationParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EADFA25051CF700A23D0F /* TransformationParameters.swift */; };
+		8183798225056E3D0034F6FF /* SinusoidalAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818979052503ECD3008BBD1D /* SinusoidalAxis.swift */; };
+		8183798325056E3D0034F6FF /* CycleStartAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EADFC250529AA00A23D0F /* CycleStartAxis.swift */; };
+		8183798425056E3D0034F6FF /* SinusoidalFunctionsIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EADF8250518D500A23D0F /* SinusoidalFunctionsIllustration.swift */; };
+		8183798525056E3D0034F6FF /* ReferenceTriangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C017E82503D113008EEE04 /* ReferenceTriangle.swift */; };
+		8183798625056E3D0034F6FF /* OppositeSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818979012503DF15008BBD1D /* OppositeSide.swift */; };
+		8183798725056E3D0034F6FF /* AdjacentSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818979032503E5D2008BBD1D /* AdjacentSide.swift */; };
+		8183798825056E3D0034F6FF /* Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EADF6250516CB00A23D0F /* Controls.swift */; };
 		818979022503DF15008BBD1D /* OppositeSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818979012503DF15008BBD1D /* OppositeSide.swift */; };
 		818979042503E5D2008BBD1D /* AdjacentSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818979032503E5D2008BBD1D /* AdjacentSide.swift */; };
 		818979062503ECD3008BBD1D /* SinusoidalAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818979052503ECD3008BBD1D /* SinusoidalAxis.swift */; };
@@ -331,6 +342,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8183797E25056E3C0034F6FF /* ColorExtensions.swift in Sources */,
+				8183797F25056E3C0034F6FF /* Degrees.swift in Sources */,
+				8183798025056E3C0034F6FF /* SinusoidalType.swift in Sources */,
+				8183798125056E3C0034F6FF /* TransformationParameters.swift in Sources */,
+				8183798225056E3D0034F6FF /* SinusoidalAxis.swift in Sources */,
+				8183798325056E3D0034F6FF /* CycleStartAxis.swift in Sources */,
+				8183798425056E3D0034F6FF /* SinusoidalFunctionsIllustration.swift in Sources */,
+				8183798525056E3D0034F6FF /* ReferenceTriangle.swift in Sources */,
+				8183798625056E3D0034F6FF /* OppositeSide.swift in Sources */,
+				8183798725056E3D0034F6FF /* AdjacentSide.swift in Sources */,
+				8183798825056E3D0034F6FF /* Controls.swift in Sources */,
 				81F98B4325027A0B00A114B2 /* CGAffineTransform+transformToPlanes.swift in Sources */,
 				81F98B502502ABE600A114B2 /* Labels.swift in Sources */,
 				81ED87D62503BBC4008A578E /* UnitCirclePlane.swift in Sources */,
