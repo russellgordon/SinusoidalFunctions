@@ -71,7 +71,7 @@ struct SinusoidalFunction: Shape {
         path.addLine(to: CGPoint(x: lastX, y: p.c))
         
         // Draw a line back to the starting X position for cosine, so the fill is correct
-        if functionType == .cosine {
+        if functionType == .cosine && angle != 0 {
             path.addLine(to: CGPoint(x: firstX, y: p.c))
         }
         
