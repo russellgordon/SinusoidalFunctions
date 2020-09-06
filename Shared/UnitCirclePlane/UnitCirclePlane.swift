@@ -23,8 +23,8 @@ struct UnitCirclePlane: View {
                         style: StrokeStyle(lineWidth: 2,
                                            lineCap: .round,
                                            lineJoin: .miter))
-                .padding(.horizontal, padding)
-
+//                .padding(.horizontal, padding)
+                .padding()
         }
 
     }

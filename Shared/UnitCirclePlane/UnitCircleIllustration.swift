@@ -29,12 +29,12 @@ struct UnitCircleIllustration: View {
                 // The unit circle for the original function
                 UnitCircle(parameters: TransformationParameters.defaultValues)
                     .stroke(Color.primary, lineWidth: 1.0)
-                    .padding(.horizontal, padding)
+                    .padding()
 
                 // The unit circle for the transformed function
                 UnitCircle(parameters: parameters)
                     .stroke(Color.primary, lineWidth: 2.0)
-                    .padding(.horizontal, padding)
+                    .padding()
 
                 // The reference triangle for original function
                 ReferenceTriangle(parameters: TransformationParameters.defaultValues,
@@ -43,7 +43,7 @@ struct UnitCircleIllustration: View {
                             style: StrokeStyle(lineWidth: 1,
                                                lineCap: .square,
                                                lineJoin: .round))
-                    .padding(.horizontal, padding)
+                    .padding()
 
                 // The reference triangle for transformed function
                 ReferenceTriangle(parameters: parameters,
@@ -52,7 +52,7 @@ struct UnitCircleIllustration: View {
                             style: StrokeStyle(lineWidth: 2,
                                                lineCap: .square,
                                                lineJoin: .round))
-                    .padding(.horizontal, padding)
+                    .padding()
 
                 if functionType == .sine {
 
@@ -62,7 +62,7 @@ struct UnitCircleIllustration: View {
                         .stroke(Color.gray,
                                 style: StrokeStyle(lineWidth: 2,
                                                    lineCap: .square))
-                        .padding(.horizontal, padding)
+                        .padding()
 
                     // The opposite side length for transformed function
                     OppositeSide(parameters: parameters,
@@ -70,7 +70,7 @@ struct UnitCircleIllustration: View {
                         .stroke(Color.red,
                                 style: StrokeStyle(lineWidth: 2,
                                                    lineCap: .square))
-                        .padding(.horizontal, padding)
+                        .padding()
 
                 } else {
 
@@ -80,7 +80,7 @@ struct UnitCircleIllustration: View {
                         .stroke(Color.gray,
                                 style: StrokeStyle(lineWidth: 2,
                                                    lineCap: .square))
-                        .padding(.horizontal, padding)
+                        .padding()
 
                     // The adjacent side length for the transformed function
                     AdjacentSide(parameters: parameters,
@@ -88,7 +88,7 @@ struct UnitCircleIllustration: View {
                         .stroke(Color.green,
                                 style: StrokeStyle(lineWidth: 2,
                                                    lineCap: .square))
-                        .padding(.horizontal, padding)
+                        .padding()
 
                 }
                 
