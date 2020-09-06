@@ -39,6 +39,7 @@ struct Presentation: View {
                         .onTapGesture(count: 2) {
                             reset()
                         }
+                        .padding(.top, 10)
 
                     // Unit circle
                     UnitCircleIllustration(parameters: parameters,

@@ -74,7 +74,6 @@ struct Controls: View {
             }
             .padding(.vertical, padding)
         }
-        .background(Color.primary.colorInvert())
         .padding(.all, 0)
 
     }

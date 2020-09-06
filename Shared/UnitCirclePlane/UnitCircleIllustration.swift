@@ -96,7 +96,6 @@ struct UnitCircleIllustration: View {
             }
             
         }
-        .background(Color.primary.colorInvert())
         .padding(.all, 0)
 
     }

@@ -35,7 +35,7 @@
           "value" : "light"
         }
       ],
-      "filename" : "sine@2x.png",
+      "filename" : "sine@3x-light-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -46,7 +46,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "sine@2x-dark.png",
+      "filename" : "sine@3x-dark-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -61,6 +61,7 @@
           "value" : "light"
         }
       ],
+      "filename" : "sine@3x-light.png",
       "idiom" : "universal",
       "scale" : "3x"
     },
@@ -71,6 +72,7 @@
           "value" : "dark"
         }
       ],
+      "filename" : "sine@3x-dark.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
