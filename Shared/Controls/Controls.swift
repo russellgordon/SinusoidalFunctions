@@ -12,19 +12,19 @@ struct Controls: View {
     @Binding var parameters: TransformationParameters
     @Binding var angle: Degrees
     @Binding var functionType: SinusoidalType
-    let padding: CGFloat
+    let imageHeight: CGFloat
     
     var body: some View {
         
-        VStack(spacing: 0) {
+        VStack() {
+            
+            Spacer()
             
             // Angle of rotation
             Text("Angle, 𝜽 = " + String(format: "%.1f", angle))
             Slider(value: $angle, in: 0...360, step: 1.0)
-                .padding(.horizontal, padding)
 
             // Equation
-            let imageHeight: CGFloat = 55.0
             if functionType == .sine {
                 Image("sine")
                     .resizable()
@@ -44,7 +44,7 @@ struct Controls: View {
                 }
             }
             .pickerStyle(SegmentedPickerStyle())
-            .padding(.horizontal, padding)
+            .padding(.bottom, 10)
                                                 
             // Transformation parameters
             HStack {
@@ -52,29 +52,27 @@ struct Controls: View {
                 VStack {
                     Text("a = " + String(format: "%.1f", parameters.a))
                     Slider(value: $parameters.a, in: -2...2, step: 0.1)
-                        .padding(.horizontal, padding)
 
                     Text("c = " + String(format: "%.1f", parameters.c))
                     Slider(value: $parameters.c, in: -2...2, step: 0.1)
-                        .padding(.horizontal, padding)
                 }
                 
                 VStack {
                     Text("k = " + String(format: "%.1f", parameters.k))
                     Slider(value: $parameters.k, in: -2...2, step: 0.1)
-                        .padding(.horizontal, padding)
 
                     Text("d = " + String(format: "%.1f", parameters.d))
                     Slider(value: $parameters.d, in: 0...720, step: 1.0)
-                        .padding(.horizontal, padding)
 
                 }
 
 
             }
-            .padding(.vertical, padding)
+            
+            Spacer()
+        
         }
-        .padding(.all, 0)
+        .padding(.vertical, 10)
 
     }
 }

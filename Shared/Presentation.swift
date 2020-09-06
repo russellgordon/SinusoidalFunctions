@@ -40,7 +40,7 @@ struct Presentation: View {
                             reset()
                         }
                         .padding(.top, 10)
-
+                    
                     // Unit circle
                     UnitCircleIllustration(parameters: parameters,
                                            angle: angle,
@@ -49,29 +49,63 @@ struct Presentation: View {
                         .onTapGesture(count: 2) {
                             reset()
                         }
-
+                    
                     // Controls
                     Controls(parameters: $parameters,
                              angle: $angle,
                              functionType: $functionType,
-                             padding: padding)
+                             imageHeight: 55)
+                        .padding(.horizontal, 20)
                     
                 }
                 
             } else {
-                
-                HStack(spacing: 15) {
-                    
-                    // Controls
-                    Controls(parameters: $parameters,
-                             angle: $angle,
-                             functionType: $functionType,
-                             padding: padding)
-                        .frame(minWidth: geometry.size.width / 3,
-                               idealWidth: geometry.size.width / 3,
-                               maxWidth: geometry.size.width / 3)
 
+                if geometry.size.height < 400 {
+                    
+                    // iPod Touch
+                    HStack(spacing: 15) {
+                        
+                        // Controls
+                        Controls(parameters: $parameters,
+                                 angle: $angle,
+                                 functionType: $functionType,
+                                 imageHeight: 33)
+                            .frame(minWidth: geometry.size.width / 3,
+                                   idealWidth: geometry.size.width / 3,
+                                   maxWidth: geometry.size.width / 3)
+                            .padding(.horizontal, 20)
+                        
+                        VStack {
+                                  
+                            // Sinusoidal function
+                            SinusoidalFunctionsIllustration(parameters: parameters,
+                                                            angle: angle,
+                                                            functionType: functionType,
+                                                            padding: 20)
+                                .onTapGesture(count: 2) {
+                                    reset()
+                                }
+                                .frame(maxHeight: geometry.size.height / 5 * 2)
+                            
+                            // Unit circle
+                            UnitCircleIllustration(parameters: parameters,
+                                                   angle: angle,
+                                                   functionType: functionType,
+                                                   padding: padding)
+                                .onTapGesture(count: 2) {
+                                    reset()
+                                }
+                                .frame(maxHeight: geometry.size.height / 5 * 2)
+                            
+                        }
+
+                    }
+                    
+                } else {
+                    
                     VStack(spacing: 15) {
+                        
                         // Sinusoidal function
                         SinusoidalFunctionsIllustration(parameters: parameters,
                                                         angle: angle,
@@ -80,19 +114,38 @@ struct Presentation: View {
                             .onTapGesture(count: 2) {
                                 reset()
                             }
+                            .frame(maxHeight: geometry.size.height / 5 * 2)
+                        
+                        HStack {
+                                  
+                            Spacer()
+                            
+                            // Controls
+                            Controls(parameters: $parameters,
+                                     angle: $angle,
+                                     functionType: $functionType,
+                                     imageHeight: 55)
+                                .frame(minWidth: geometry.size.width / 3,
+                                       idealWidth: geometry.size.width / 3,
+                                       maxWidth: geometry.size.width / 3)
+                                .padding(.horizontal, 20)
 
-                        // Unit circle
-                        UnitCircleIllustration(parameters: parameters,
-                                               angle: angle,
-                                               functionType: functionType,
-                                               padding: padding)
-                            .onTapGesture(count: 2) {
-                                reset()
-                            }
+                            // Unit circle
+                            UnitCircleIllustration(parameters: parameters,
+                                                   angle: angle,
+                                                   functionType: functionType,
+                                                   padding: padding)
+                                .onTapGesture(count: 2) {
+                                    reset()
+                                }
+                                .frame(maxHeight: geometry.size.height / 5 * 2)
+                            
+                        }
+                        
                     }
-                    
+                    .padding(.vertical, 20)
+
                 }
-                .padding(.vertical, 20)
                 
             }
             
@@ -114,7 +167,7 @@ struct Presentation_Previews: PreviewProvider {
         // Source for landscape view:
         // https://stackoverflow.com/a/56629828/5537362
         Presentation(verticalOrientation: false)
-                    .previewLayout(.fixed(width: 568, height: 320)) // iPhone SE landscape size
-
+            .previewLayout(.fixed(width: 568, height: 320)) // iPhone SE landscape size
+        
     }
 }

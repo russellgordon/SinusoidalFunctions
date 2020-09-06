@@ -53,10 +53,19 @@ struct ContentView: View {
             
         } else if horizontalSizeClass == .regular && verticalSizeClass == .regular {
             
-            Presentation(verticalOrientation: false)
-            
-        } else {
+            #if os(macOS)
+                Presentation(verticalOrientation: false)
+                    .frame(minWidth: 600, minHeight: 600)
+            #else
+            if UIDevice.current.localizedModel == "iPad" {
+                Presentation(verticalOrientation: false)
+            } else {
+                Presentation(verticalOrientation: true)
+            }
+            #endif
 
+        } else {
+            
             Presentation(verticalOrientation: false)
 
         }
