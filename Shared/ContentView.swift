@@ -40,44 +40,62 @@ struct ContentView: View {
     @Environment(\.verticalSizeClass) var verticalSizeClass
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
+    // Control shape and type of curve
+    @State private var parameters = TransformationParameters(a: 1,
+                                                             d: 0,
+                                                             k: 1,
+                                                             c: 0)
+    @State private var angle: Degrees = 45
+    @State private var functionType: SinusoidalType = .sine
+    
     var body: some View {
                 
         // Present interface in appropriate orientation
         if horizontalSizeClass == .compact && verticalSizeClass == .regular {
             
-            Presentation(verticalOrientation: true)
+            Presentation(parameters: $parameters,
+                         angle: $angle,
+                         functionType: $functionType,
+                         verticalOrientation: true)
 
         } else if horizontalSizeClass == .regular && verticalSizeClass == .compact {
             
-            Presentation(verticalOrientation: false)
+            Presentation(parameters: $parameters,
+                         angle: $angle,
+                         functionType: $functionType,
+                         verticalOrientation: false)
             
         } else if horizontalSizeClass == .regular && verticalSizeClass == .regular {
             
             #if os(macOS)
-                Presentation(verticalOrientation: false)
+            Presentation(parameters: $parameters,
+                         angle: $angle,
+                         functionType: $functionType,
+                         verticalOrientation: false)
                     .frame(minWidth: 600, minHeight: 600)
             #else
             if UIDevice.current.localizedModel == "iPad" {
-                Presentation(verticalOrientation: false)
+                Presentation(parameters: $parameters,
+                             angle: $angle,
+                             functionType: $functionType,
+                             verticalOrientation: false)
             } else {
-                Presentation(verticalOrientation: true)
+                Presentation(parameters: $parameters,
+                             angle: $angle,
+                             functionType: $functionType,
+                             verticalOrientation: true)
             }
             #endif
 
         } else {
             
-            Presentation(verticalOrientation: false)
+            Presentation(parameters: $parameters,
+                         angle: $angle,
+                         functionType: $functionType,
+                         verticalOrientation: false)
 
         }
         
     }
     
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        Presentation(verticalOrientation: true).previewDevice(PreviewDevice(rawValue: "iPod touch (7th generation)"))
-        Presentation(verticalOrientation: true).previewDevice(PreviewDevice(rawValue: "iPhone 11"))
-        Presentation(verticalOrientation: true).previewDevice(PreviewDevice(rawValue: "iPad (7th generation)"))
-    }
 }

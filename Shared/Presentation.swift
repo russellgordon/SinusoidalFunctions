@@ -8,15 +8,12 @@
 import SwiftUI
 
 struct Presentation: View {
-    
+        
     // Control shape and type of curve
-    @State private var parameters = TransformationParameters(a: 1,
-                                                             d: 0,
-                                                             k: 1,
-                                                             c: 0)
-    @State private var angle: Degrees = 45
-    @State private var functionType: SinusoidalType = .sine
-    
+    @Binding var parameters: TransformationParameters
+    @Binding var angle: Degrees
+    @Binding var functionType: SinusoidalType
+
     // Control how simulation elements are arranged based on size of screen
     let verticalOrientation: Bool
     
@@ -158,16 +155,4 @@ struct Presentation: View {
         angle = 45
     }
     
-}
-
-struct Presentation_Previews: PreviewProvider {
-    static var previews: some View {
-        
-        Presentation(verticalOrientation: true)
-        // Source for landscape view:
-        // https://stackoverflow.com/a/56629828/5537362
-        Presentation(verticalOrientation: false)
-            .previewLayout(.fixed(width: 568, height: 320)) // iPhone SE landscape size
-        
-    }
 }
