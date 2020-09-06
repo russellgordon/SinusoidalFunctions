@@ -9,11 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let initialA: CGFloat = 1
-    let initialD: Degrees = 0
-    let initialK: CGFloat = 1
-    let initialC: CGFloat = 0
-
+    // Control shape and type of curve
     @State private var a: CGFloat = 1
     @State private var d: Degrees = 0
     @State private var k: CGFloat = 1
@@ -21,9 +17,10 @@ struct ContentView: View {
     @State private var angle: Degrees = 0
     @State private var functionType: SinusoidalType = .sine
     
-    let grey = Color(hue: 240.0/360.0, saturation: 0.15, brightness: 0.45, opacity: 0.75)
-    let green = Color(hue: 135.0/360.0, saturation: 0.72, brightness: 0.73, opacity: 0.75)
-    let red = Color(hue: 3/360.0, saturation: 0.81, brightness: 1.00, opacity: 0.75)
+    let initialA: CGFloat = 1
+    let initialD: Degrees = 0
+    let initialK: CGFloat = 1
+    let initialC: CGFloat = 0
 
     var body: some View {
         
@@ -52,7 +49,7 @@ struct ContentView: View {
                                            c: initialC,
                                            angle: angle,
                                            type: functionType)
-                            .fill(grey)
+                            .fill(Color.parentFunction)
                             .padding(.horizontal, padding)
 
                         // The transformed function
@@ -63,7 +60,7 @@ struct ContentView: View {
                                                c: c,
                                                angle: angle * k,
                                                type: functionType)
-                                .fill(functionType == .sine ? red : green)
+                                .fill(functionType == .sine ? Color.transformedSine : Color.transformedCosine)
                                 .padding(.horizontal, padding)
                             
                         }
@@ -71,7 +68,7 @@ struct ContentView: View {
                         // Show the sinusoidal axis when there is a vertical shift
                         if c != 0 {
                             SinusoidalAxis(c: c)
-                                .stroke(functionType == .sine ? red : green, style: StrokeStyle(lineWidth: 1.0, dash: [5.0], dashPhase: 5.0))
+                                .stroke(functionType == .sine ? Color.transformedSine : Color.transformedCosine, style: StrokeStyle(lineWidth: 1.0, dash: [5.0], dashPhase: 5.0))
                                 .padding(.horizontal, 20.0)
 
                         }
