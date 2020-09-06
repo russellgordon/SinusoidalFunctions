@@ -7,66 +7,68 @@
 
 import SwiftUI
 
+// Simulate size classes for macOS
+// See: https://stackoverflow.com/a/63526479/5537362
+#if os(macOS)
+enum UserInterfaceSizeClass {
+    case compact
+    case regular
+}
+
+struct HorizontalSizeClassEnvironmentKey: EnvironmentKey {
+    static let defaultValue: UserInterfaceSizeClass = .regular
+}
+struct VerticalSizeClassEnvironmentKey: EnvironmentKey {
+    static let defaultValue: UserInterfaceSizeClass = .regular
+}
+
+extension EnvironmentValues {
+    var horizontalSizeClass: UserInterfaceSizeClass {
+        get { return self[HorizontalSizeClassEnvironmentKey] }
+        set { self[HorizontalSizeClassEnvironmentKey] = newValue }
+    }
+    var verticalSizeClass: UserInterfaceSizeClass {
+        get { return self[VerticalSizeClassEnvironmentKey] }
+        set { self[VerticalSizeClassEnvironmentKey] = newValue }
+    }
+}
+#endif
+
 struct ContentView: View {
     
-    // Control shape and type of curve
-    @State private var parameters = TransformationParameters(a: 1,
-                                                             d: 0,
-                                                             k: 1,
-                                                             c: 0)
-    @State private var angle: Degrees = 45
-    @State private var functionType: SinusoidalType = .sine
+    // For positioning elements as needed
+    @Environment(\.verticalSizeClass) var verticalSizeClass
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
     var body: some View {
-        
-        // Provide dimensions information for the entire device
-        GeometryReader { geometry in
-            
-            let padding: CGFloat = 20
-            
-            VStack(spacing: 15) {
                 
-                // Sinusoidal function
-                SinusoidalFunctionsIllustration(parameters: parameters,
-                                                angle: angle,
-                                                functionType: functionType,
-                                                padding: 20)
-                    .onTapGesture(count: 2) {
-                        reset()
-                    }
-
-                // Unit circle
-                UnitCircleIllustration(parameters: parameters,
-                                       angle: angle,
-                                       functionType: functionType,
-                                       padding: padding)
-                    .onTapGesture(count: 2) {
-                        reset()
-                    }
-
-                // Controls
-                Controls(parameters: $parameters,
-                         angle: $angle,
-                         functionType: $functionType,
-                         padding: padding)
-                
-            }
+        // Present interface in appropriate orientation
+        if horizontalSizeClass == .compact && verticalSizeClass == .regular {
             
+            Presentation(verticalOrientation: true)
+
+        } else if horizontalSizeClass == .regular && verticalSizeClass == .compact {
+            
+            Presentation(verticalOrientation: false)
+            
+        } else if horizontalSizeClass == .regular && verticalSizeClass == .regular {
+            
+            Presentation(verticalOrientation: true)
+            
+        } else {
+
+            Presentation(verticalOrientation: false)
+
         }
-    }
-    
-    func reset() {
-        // Reset transformations and angle of rotation
-        parameters = TransformationParameters.defaultValues
-        angle = 45
+        
     }
     
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().previewDevice(PreviewDevice(rawValue: "iPod touch (7th generation)"))
-        ContentView().previewDevice(PreviewDevice(rawValue: "iPhone 11"))
-        ContentView().previewDevice(PreviewDevice(rawValue: "iPad (7th generation)"))
+        Presentation(verticalOrientation: true).previewDevice(PreviewDevice(rawValue: "iPod touch (7th generation)"))
+        Presentation(verticalOrientation: true).previewDevice(PreviewDevice(rawValue: "iPhone 11"))
+        Presentation(verticalOrientation: true).previewDevice(PreviewDevice(rawValue: "iPad (7th generation)"))
     }
 }
