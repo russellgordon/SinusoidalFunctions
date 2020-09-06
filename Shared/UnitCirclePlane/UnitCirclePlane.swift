@@ -15,9 +15,6 @@ struct UnitCirclePlane: View {
     
     var body: some View {
         
-        // Leading and trailing padding for the axes
-        let planeWidth = width - padding * 2.0
-        
         ZStack {
 
             // Draw the plane as a shape
@@ -27,9 +24,6 @@ struct UnitCirclePlane: View {
                                            lineCap: .round,
                                            lineJoin: .miter))
                 .padding(.horizontal, padding)
-
-            // Labels for the axes
-//            Labels(planeWidth: planeWidth, planeHeight: height)
 
         }
 
