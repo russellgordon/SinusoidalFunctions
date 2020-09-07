@@ -26,12 +26,12 @@ struct Controls: View {
 
             // Equation
             if functionType == .sine {
-                Image("sine")
+                Image("sine-svg")
                     .resizable()
                     .scaledToFit()
                     .frame(minHeight: imageHeight, maxHeight: imageHeight)
             } else {
-                Image("cosine")
+                Image("cosine-svg")
                     .resizable()
                     .scaledToFit()
                     .frame(minHeight: imageHeight, maxHeight: imageHeight)
